@@ -8,6 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		BB190D121FAB80E800BDC6D0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D111FAB80E800BDC6D0 /* main.cpp */; };
+		BB190D871FAB846300BDC6D0 /* CurveTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D6B1FAB846200BDC6D0 /* CurveTimeline.cpp */; };
+		BB190D881FAB846300BDC6D0 /* Constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D6C1FAB846200BDC6D0 /* Constraint.cpp */; };
+		BB190D891FAB846300BDC6D0 /* SkeletonData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D6D1FAB846200BDC6D0 /* SkeletonData.cpp */; };
+		BB190D8A1FAB846300BDC6D0 /* Skin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D6E1FAB846200BDC6D0 /* Skin.cpp */; };
+		BB190D8B1FAB846300BDC6D0 /* BoneData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D6F1FAB846200BDC6D0 /* BoneData.cpp */; };
+		BB190D8C1FAB846300BDC6D0 /* Skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D701FAB846200BDC6D0 /* Skeleton.cpp */; };
+		BB190D8D1FAB846300BDC6D0 /* SlotData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D711FAB846200BDC6D0 /* SlotData.cpp */; };
+		BB190D8E1FAB846300BDC6D0 /* MeshAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D721FAB846200BDC6D0 /* MeshAttachment.cpp */; };
+		BB190D8F1FAB846300BDC6D0 /* MathUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D731FAB846200BDC6D0 /* MathUtil.cpp */; };
+		BB190D901FAB846300BDC6D0 /* Updatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D741FAB846200BDC6D0 /* Updatable.cpp */; };
+		BB190D911FAB846300BDC6D0 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D751FAB846200BDC6D0 /* Animation.cpp */; };
+		BB190D921FAB846300BDC6D0 /* IkConstraintData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D761FAB846200BDC6D0 /* IkConstraintData.cpp */; };
+		BB190D931FAB846300BDC6D0 /* Attachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D771FAB846200BDC6D0 /* Attachment.cpp */; };
+		BB190D941FAB846300BDC6D0 /* Slot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D781FAB846200BDC6D0 /* Slot.cpp */; };
+		BB190D951FAB846300BDC6D0 /* RotateTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D791FAB846200BDC6D0 /* RotateTimeline.cpp */; };
+		BB190D961FAB846300BDC6D0 /* Timeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D7A1FAB846200BDC6D0 /* Timeline.cpp */; };
+		BB190D971FAB846300BDC6D0 /* VertexAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D7B1FAB846200BDC6D0 /* VertexAttachment.cpp */; };
+		BB190D981FAB846300BDC6D0 /* RTTI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D7C1FAB846200BDC6D0 /* RTTI.cpp */; };
+		BB190D991FAB846300BDC6D0 /* PathConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D7D1FAB846200BDC6D0 /* PathConstraint.cpp */; };
+		BB190D9A1FAB846300BDC6D0 /* EventData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D7E1FAB846200BDC6D0 /* EventData.cpp */; };
+		BB190D9B1FAB846300BDC6D0 /* PathConstraintData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D7F1FAB846300BDC6D0 /* PathConstraintData.cpp */; };
+		BB190D9C1FAB846300BDC6D0 /* TransformConstraintData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D801FAB846300BDC6D0 /* TransformConstraintData.cpp */; };
+		BB190D9D1FAB846300BDC6D0 /* RegionAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D811FAB846300BDC6D0 /* RegionAttachment.cpp */; };
+		BB190D9E1FAB846300BDC6D0 /* IkConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D821FAB846300BDC6D0 /* IkConstraint.cpp */; };
+		BB190D9F1FAB846300BDC6D0 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D831FAB846300BDC6D0 /* Event.cpp */; };
+		BB190DA01FAB846300BDC6D0 /* PathAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D841FAB846300BDC6D0 /* PathAttachment.cpp */; };
+		BB190DA11FAB846300BDC6D0 /* TransformConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D851FAB846300BDC6D0 /* TransformConstraint.cpp */; };
+		BB190DA21FAB846300BDC6D0 /* Bone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D861FAB846300BDC6D0 /* Bone.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +56,73 @@
 		BB190D201FAB82BB00BDC6D0 /* ContainerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerUtil.h; sourceTree = "<group>"; };
 		BB190D211FAB82BB00BDC6D0 /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
 		BB190D221FAB82BB00BDC6D0 /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		BB190D261FAB845000BDC6D0 /* Animation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		BB190D271FAB845000BDC6D0 /* Attachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Attachment.h; sourceTree = "<group>"; };
+		BB190D281FAB845000BDC6D0 /* BlendMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlendMode.h; sourceTree = "<group>"; };
+		BB190D291FAB845000BDC6D0 /* Bone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bone.h; sourceTree = "<group>"; };
+		BB190D2A1FAB845000BDC6D0 /* BoneData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoneData.h; sourceTree = "<group>"; };
+		BB190D2B1FAB845000BDC6D0 /* Constraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constraint.h; sourceTree = "<group>"; };
+		BB190D2C1FAB845000BDC6D0 /* ContainerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerUtil.h; sourceTree = "<group>"; };
+		BB190D2D1FAB845000BDC6D0 /* CurveTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurveTimeline.h; sourceTree = "<group>"; };
+		BB190D2E1FAB845000BDC6D0 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		BB190D2F1FAB845000BDC6D0 /* EventData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventData.h; sourceTree = "<group>"; };
+		BB190D301FAB845000BDC6D0 /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
+		BB190D311FAB845000BDC6D0 /* IkConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IkConstraint.h; sourceTree = "<group>"; };
+		BB190D321FAB845000BDC6D0 /* IkConstraintData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IkConstraintData.h; sourceTree = "<group>"; };
+		BB190D331FAB845000BDC6D0 /* MathUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathUtil.h; sourceTree = "<group>"; };
+		BB190D341FAB845000BDC6D0 /* MeshAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeshAttachment.h; sourceTree = "<group>"; };
+		BB190D351FAB845000BDC6D0 /* MixDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixDirection.h; sourceTree = "<group>"; };
+		BB190D361FAB845000BDC6D0 /* MixPose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixPose.h; sourceTree = "<group>"; };
+		BB190D371FAB845000BDC6D0 /* PathAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathAttachment.h; sourceTree = "<group>"; };
+		BB190D381FAB845000BDC6D0 /* PathConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathConstraint.h; sourceTree = "<group>"; };
+		BB190D391FAB845000BDC6D0 /* PathConstraintData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathConstraintData.h; sourceTree = "<group>"; };
+		BB190D3A1FAB845000BDC6D0 /* PositionMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PositionMode.h; sourceTree = "<group>"; };
+		BB190D3B1FAB845000BDC6D0 /* RegionAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegionAttachment.h; sourceTree = "<group>"; };
+		BB190D3C1FAB845000BDC6D0 /* RotateMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RotateMode.h; sourceTree = "<group>"; };
+		BB190D3D1FAB845000BDC6D0 /* RotateTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RotateTimeline.h; sourceTree = "<group>"; };
+		BB190D3E1FAB845000BDC6D0 /* RTTI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTTI.h; sourceTree = "<group>"; };
+		BB190D3F1FAB845000BDC6D0 /* Skeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
+		BB190D401FAB845000BDC6D0 /* SkeletonData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkeletonData.h; sourceTree = "<group>"; };
+		BB190D411FAB845000BDC6D0 /* Skin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Skin.h; sourceTree = "<group>"; };
+		BB190D421FAB845000BDC6D0 /* Slot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
+		BB190D431FAB845000BDC6D0 /* SlotData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlotData.h; sourceTree = "<group>"; };
+		BB190D441FAB845000BDC6D0 /* SpacingMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpacingMode.h; sourceTree = "<group>"; };
+		BB190D451FAB845000BDC6D0 /* Timeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
+		BB190D461FAB845000BDC6D0 /* TimelineType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineType.h; sourceTree = "<group>"; };
+		BB190D471FAB845000BDC6D0 /* TransformConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformConstraint.h; sourceTree = "<group>"; };
+		BB190D481FAB845000BDC6D0 /* TransformConstraintData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformConstraintData.h; sourceTree = "<group>"; };
+		BB190D491FAB845000BDC6D0 /* TransformMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformMode.h; sourceTree = "<group>"; };
+		BB190D4A1FAB845000BDC6D0 /* Updatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Updatable.h; sourceTree = "<group>"; };
+		BB190D4B1FAB845000BDC6D0 /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		BB190D4C1FAB845000BDC6D0 /* VertexAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexAttachment.h; sourceTree = "<group>"; };
+		BB190D6B1FAB846200BDC6D0 /* CurveTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CurveTimeline.cpp; sourceTree = "<group>"; };
+		BB190D6C1FAB846200BDC6D0 /* Constraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Constraint.cpp; sourceTree = "<group>"; };
+		BB190D6D1FAB846200BDC6D0 /* SkeletonData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonData.cpp; sourceTree = "<group>"; };
+		BB190D6E1FAB846200BDC6D0 /* Skin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skin.cpp; sourceTree = "<group>"; };
+		BB190D6F1FAB846200BDC6D0 /* BoneData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoneData.cpp; sourceTree = "<group>"; };
+		BB190D701FAB846200BDC6D0 /* Skeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skeleton.cpp; sourceTree = "<group>"; };
+		BB190D711FAB846200BDC6D0 /* SlotData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlotData.cpp; sourceTree = "<group>"; };
+		BB190D721FAB846200BDC6D0 /* MeshAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshAttachment.cpp; sourceTree = "<group>"; };
+		BB190D731FAB846200BDC6D0 /* MathUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathUtil.cpp; sourceTree = "<group>"; };
+		BB190D741FAB846200BDC6D0 /* Updatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Updatable.cpp; sourceTree = "<group>"; };
+		BB190D751FAB846200BDC6D0 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		BB190D761FAB846200BDC6D0 /* IkConstraintData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IkConstraintData.cpp; sourceTree = "<group>"; };
+		BB190D771FAB846200BDC6D0 /* Attachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attachment.cpp; sourceTree = "<group>"; };
+		BB190D781FAB846200BDC6D0 /* Slot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slot.cpp; sourceTree = "<group>"; };
+		BB190D791FAB846200BDC6D0 /* RotateTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RotateTimeline.cpp; sourceTree = "<group>"; };
+		BB190D7A1FAB846200BDC6D0 /* Timeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timeline.cpp; sourceTree = "<group>"; };
+		BB190D7B1FAB846200BDC6D0 /* VertexAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexAttachment.cpp; sourceTree = "<group>"; };
+		BB190D7C1FAB846200BDC6D0 /* RTTI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RTTI.cpp; sourceTree = "<group>"; };
+		BB190D7D1FAB846200BDC6D0 /* PathConstraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PathConstraint.cpp; sourceTree = "<group>"; };
+		BB190D7E1FAB846200BDC6D0 /* EventData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventData.cpp; sourceTree = "<group>"; };
+		BB190D7F1FAB846300BDC6D0 /* PathConstraintData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PathConstraintData.cpp; sourceTree = "<group>"; };
+		BB190D801FAB846300BDC6D0 /* TransformConstraintData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformConstraintData.cpp; sourceTree = "<group>"; };
+		BB190D811FAB846300BDC6D0 /* RegionAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegionAttachment.cpp; sourceTree = "<group>"; };
+		BB190D821FAB846300BDC6D0 /* IkConstraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IkConstraint.cpp; sourceTree = "<group>"; };
+		BB190D831FAB846300BDC6D0 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
+		BB190D841FAB846300BDC6D0 /* PathAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PathAttachment.cpp; sourceTree = "<group>"; };
+		BB190D851FAB846300BDC6D0 /* TransformConstraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformConstraint.cpp; sourceTree = "<group>"; };
+		BB190D861FAB846300BDC6D0 /* Bone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bone.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +155,7 @@
 		BB190D101FAB80E800BDC6D0 /* TestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				BB190D231FAB845000BDC6D0 /* spine-cpp */,
 				BB190D1F1FAB82BB00BDC6D0 /* container */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
 			);
@@ -74,6 +170,113 @@
 				BB190D221FAB82BB00BDC6D0 /* Vector.h */,
 			);
 			path = container;
+			sourceTree = "<group>";
+		};
+		BB190D231FAB845000BDC6D0 /* spine-cpp */ = {
+			isa = PBXGroup;
+			children = (
+				BB190D241FAB845000BDC6D0 /* include */,
+				BB190D4D1FAB845000BDC6D0 /* src */,
+			);
+			name = "spine-cpp";
+			path = "../../dante/src/3rdparty/spine-runtimes/spine-cpp/spine-cpp";
+			sourceTree = "<group>";
+		};
+		BB190D241FAB845000BDC6D0 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BB190D251FAB845000BDC6D0 /* spine */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		BB190D251FAB845000BDC6D0 /* spine */ = {
+			isa = PBXGroup;
+			children = (
+				BB190D261FAB845000BDC6D0 /* Animation.h */,
+				BB190D271FAB845000BDC6D0 /* Attachment.h */,
+				BB190D281FAB845000BDC6D0 /* BlendMode.h */,
+				BB190D291FAB845000BDC6D0 /* Bone.h */,
+				BB190D2A1FAB845000BDC6D0 /* BoneData.h */,
+				BB190D2B1FAB845000BDC6D0 /* Constraint.h */,
+				BB190D2C1FAB845000BDC6D0 /* ContainerUtil.h */,
+				BB190D2D1FAB845000BDC6D0 /* CurveTimeline.h */,
+				BB190D2E1FAB845000BDC6D0 /* Event.h */,
+				BB190D2F1FAB845000BDC6D0 /* EventData.h */,
+				BB190D301FAB845000BDC6D0 /* HashMap.h */,
+				BB190D311FAB845000BDC6D0 /* IkConstraint.h */,
+				BB190D321FAB845000BDC6D0 /* IkConstraintData.h */,
+				BB190D331FAB845000BDC6D0 /* MathUtil.h */,
+				BB190D341FAB845000BDC6D0 /* MeshAttachment.h */,
+				BB190D351FAB845000BDC6D0 /* MixDirection.h */,
+				BB190D361FAB845000BDC6D0 /* MixPose.h */,
+				BB190D371FAB845000BDC6D0 /* PathAttachment.h */,
+				BB190D381FAB845000BDC6D0 /* PathConstraint.h */,
+				BB190D391FAB845000BDC6D0 /* PathConstraintData.h */,
+				BB190D3A1FAB845000BDC6D0 /* PositionMode.h */,
+				BB190D3B1FAB845000BDC6D0 /* RegionAttachment.h */,
+				BB190D3C1FAB845000BDC6D0 /* RotateMode.h */,
+				BB190D3D1FAB845000BDC6D0 /* RotateTimeline.h */,
+				BB190D3E1FAB845000BDC6D0 /* RTTI.h */,
+				BB190D3F1FAB845000BDC6D0 /* Skeleton.h */,
+				BB190D401FAB845000BDC6D0 /* SkeletonData.h */,
+				BB190D411FAB845000BDC6D0 /* Skin.h */,
+				BB190D421FAB845000BDC6D0 /* Slot.h */,
+				BB190D431FAB845000BDC6D0 /* SlotData.h */,
+				BB190D441FAB845000BDC6D0 /* SpacingMode.h */,
+				BB190D451FAB845000BDC6D0 /* Timeline.h */,
+				BB190D461FAB845000BDC6D0 /* TimelineType.h */,
+				BB190D471FAB845000BDC6D0 /* TransformConstraint.h */,
+				BB190D481FAB845000BDC6D0 /* TransformConstraintData.h */,
+				BB190D491FAB845000BDC6D0 /* TransformMode.h */,
+				BB190D4A1FAB845000BDC6D0 /* Updatable.h */,
+				BB190D4B1FAB845000BDC6D0 /* Vector.h */,
+				BB190D4C1FAB845000BDC6D0 /* VertexAttachment.h */,
+			);
+			path = spine;
+			sourceTree = "<group>";
+		};
+		BB190D4D1FAB845000BDC6D0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB190D4E1FAB845000BDC6D0 /* spine */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		BB190D4E1FAB845000BDC6D0 /* spine */ = {
+			isa = PBXGroup;
+			children = (
+				BB190D751FAB846200BDC6D0 /* Animation.cpp */,
+				BB190D771FAB846200BDC6D0 /* Attachment.cpp */,
+				BB190D861FAB846300BDC6D0 /* Bone.cpp */,
+				BB190D6F1FAB846200BDC6D0 /* BoneData.cpp */,
+				BB190D6C1FAB846200BDC6D0 /* Constraint.cpp */,
+				BB190D6B1FAB846200BDC6D0 /* CurveTimeline.cpp */,
+				BB190D831FAB846300BDC6D0 /* Event.cpp */,
+				BB190D7E1FAB846200BDC6D0 /* EventData.cpp */,
+				BB190D821FAB846300BDC6D0 /* IkConstraint.cpp */,
+				BB190D761FAB846200BDC6D0 /* IkConstraintData.cpp */,
+				BB190D731FAB846200BDC6D0 /* MathUtil.cpp */,
+				BB190D721FAB846200BDC6D0 /* MeshAttachment.cpp */,
+				BB190D841FAB846300BDC6D0 /* PathAttachment.cpp */,
+				BB190D7D1FAB846200BDC6D0 /* PathConstraint.cpp */,
+				BB190D7F1FAB846300BDC6D0 /* PathConstraintData.cpp */,
+				BB190D811FAB846300BDC6D0 /* RegionAttachment.cpp */,
+				BB190D791FAB846200BDC6D0 /* RotateTimeline.cpp */,
+				BB190D7C1FAB846200BDC6D0 /* RTTI.cpp */,
+				BB190D701FAB846200BDC6D0 /* Skeleton.cpp */,
+				BB190D6D1FAB846200BDC6D0 /* SkeletonData.cpp */,
+				BB190D6E1FAB846200BDC6D0 /* Skin.cpp */,
+				BB190D781FAB846200BDC6D0 /* Slot.cpp */,
+				BB190D711FAB846200BDC6D0 /* SlotData.cpp */,
+				BB190D7A1FAB846200BDC6D0 /* Timeline.cpp */,
+				BB190D851FAB846300BDC6D0 /* TransformConstraint.cpp */,
+				BB190D801FAB846300BDC6D0 /* TransformConstraintData.cpp */,
+				BB190D741FAB846200BDC6D0 /* Updatable.cpp */,
+				BB190D7B1FAB846200BDC6D0 /* VertexAttachment.cpp */,
+			);
+			path = spine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +336,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB190D961FAB846300BDC6D0 /* Timeline.cpp in Sources */,
+				BB190D891FAB846300BDC6D0 /* SkeletonData.cpp in Sources */,
+				BB190D9D1FAB846300BDC6D0 /* RegionAttachment.cpp in Sources */,
+				BB190D8D1FAB846300BDC6D0 /* SlotData.cpp in Sources */,
+				BB190D9A1FAB846300BDC6D0 /* EventData.cpp in Sources */,
+				BB190D921FAB846300BDC6D0 /* IkConstraintData.cpp in Sources */,
+				BB190D9B1FAB846300BDC6D0 /* PathConstraintData.cpp in Sources */,
+				BB190D911FAB846300BDC6D0 /* Animation.cpp in Sources */,
+				BB190D871FAB846300BDC6D0 /* CurveTimeline.cpp in Sources */,
+				BB190D8E1FAB846300BDC6D0 /* MeshAttachment.cpp in Sources */,
+				BB190D881FAB846300BDC6D0 /* Constraint.cpp in Sources */,
+				BB190D901FAB846300BDC6D0 /* Updatable.cpp in Sources */,
+				BB190D991FAB846300BDC6D0 /* PathConstraint.cpp in Sources */,
+				BB190D8C1FAB846300BDC6D0 /* Skeleton.cpp in Sources */,
+				BB190D9F1FAB846300BDC6D0 /* Event.cpp in Sources */,
+				BB190D951FAB846300BDC6D0 /* RotateTimeline.cpp in Sources */,
+				BB190D981FAB846300BDC6D0 /* RTTI.cpp in Sources */,
+				BB190D941FAB846300BDC6D0 /* Slot.cpp in Sources */,
+				BB190D9C1FAB846300BDC6D0 /* TransformConstraintData.cpp in Sources */,
+				BB190DA01FAB846300BDC6D0 /* PathAttachment.cpp in Sources */,
+				BB190D971FAB846300BDC6D0 /* VertexAttachment.cpp in Sources */,
+				BB190DA11FAB846300BDC6D0 /* TransformConstraint.cpp in Sources */,
+				BB190D8B1FAB846300BDC6D0 /* BoneData.cpp in Sources */,
+				BB190DA21FAB846300BDC6D0 /* Bone.cpp in Sources */,
+				BB190D8F1FAB846300BDC6D0 /* MathUtil.cpp in Sources */,
 				BB190D121FAB80E800BDC6D0 /* main.cpp in Sources */,
+				BB190D9E1FAB846300BDC6D0 /* IkConstraint.cpp in Sources */,
+				BB190D931FAB846300BDC6D0 /* Attachment.cpp in Sources */,
+				BB190D8A1FAB846300BDC6D0 /* Skin.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,9 +477,17 @@
 		BB190D161FAB80E800BDC6D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V5EV5R3XG;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TestHarness\"";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/TestHarness\"",
+					"\"$(SRCROOT)/../dante/src/3rdparty/spine-runtimes/spine-cpp/spine-cpp/include\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -256,9 +495,17 @@
 		BB190D171FAB80E800BDC6D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V5EV5R3XG;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TestHarness\"";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/TestHarness\"",
+					"\"$(SRCROOT)/../dante/src/3rdparty/spine-runtimes/spine-cpp/spine-cpp/include\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

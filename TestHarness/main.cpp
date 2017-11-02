@@ -12,6 +12,7 @@
 #include <assert.h>
 #include <time.h>
 
+#include <container/ContainerUtil.h>
 #include <container/Vector.h>
 #include <container/HashMap.h>
 
