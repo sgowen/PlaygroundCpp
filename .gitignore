@@ -1,0 +1,10 @@
+# Xcode
+*.xcuserdatad/
+xcuserdata/
+xcshareddata/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db

@@ -1,0 +1,336 @@
+//
+//  HashMap.h
+//  TestHarness
+//
+//  Created by Stephen Gowen on 11/2/17.
+//  Copyright © 2017 Noctis Games. All rights reserved.
+//
+
+#ifndef TestHarness_HashMap_h
+#define TestHarness_HashMap_h
+
+#include <iostream>
+#include <string>
+
+namespace TestHarness
+{
+    template <typename K, typename V, typename H>
+    class HashMap
+    {
+    private:
+        class Entry;
+        
+    public:
+        class Iterator
+        {
+            friend class HashMap;
+            
+        public:
+            Iterator(Entry* entry = NULL) : _entry(entry)
+            {
+                // Empty
+            }
+            
+            Iterator& operator++()
+            {
+                _entry = _entry->next;
+                return *this;
+            }
+            
+            Iterator& operator--()
+            {
+                _entry = _entry->prev;
+                return *this;
+            }
+            
+            bool operator==(const Iterator& p) const
+            {
+                return _entry == p._entry;
+            }
+            
+            bool operator!=(const Iterator& p) const
+            {
+                return _entry != p._entry;
+            }
+            
+            K& first()
+            {
+                return _entry->_key;
+            }
+            
+            V& second()
+            {
+                return _entry->_value;
+            }
+            
+        private:
+            Entry* _entry;
+        };
+        
+        HashMap(size_t capacity = 65535) : _capacity(capacity), _hashFunction(), _header(), _trailer()
+        {
+            _hashTable = new Entry[capacity];
+            for (int i = 0; i < _capacity; ++i)
+            {
+                _hashTable[i] = Entry();
+            }
+            
+            _header.prev = &_header;
+            _header.next = &_trailer;
+            _trailer.prev = &_header;
+            _trailer.next = &_trailer;
+            _hashSize = 0;
+        }
+        
+        ~HashMap()
+        {
+            delete [] _hashTable;
+            
+            _hashSize = 0;
+        }
+        
+        size_t size()
+        {
+            return _hashSize;
+        }
+        
+        Iterator begin()
+        {
+            return Iterator(_header.next);
+        }
+        
+        Iterator end()
+        {
+            return Iterator(&_trailer);
+        }
+        
+        Iterator rbegin()
+        {
+            return Iterator(_trailer.prev);
+        }
+        
+        Iterator rend()
+        {
+            return Iterator(_header);
+        }
+        
+        std::pair<Iterator, bool> insert(const K& key, const V& value)
+        {
+            Iterator iter = find(key);
+            
+            if (iter._entry != &_trailer)
+            {
+                return std::make_pair(iter, false);
+            }
+            
+            size_t index = hash(key);
+            
+            Entry* entry = new Entry();
+            entry->_key = key;
+            entry->_value = value;
+            
+            _hashSize++;
+            
+            if (_header.next == (&_trailer))
+            {
+                _hashTable[index].next = entry;
+                _hashTable[index].prev = entry;
+                _header.next = entry;
+                entry->prev = &_header;
+                entry->next = &_trailer;
+                _trailer.prev = entry;
+                
+                return std::make_pair(Iterator(entry), true);
+            }
+            
+            if (_hashTable[index].next == NULL)
+            {
+                _hashTable[index].next = entry;
+                _hashTable[index].prev = entry;
+                if (index < hash(_header.next->_key))
+                {
+                    entry->next = _header.next;
+                    entry->prev = &_header;
+                    _header.next->prev = entry;
+                    _header.next = entry;
+                }
+                else if (index > hash(_header.next->_key) && index < hash(_trailer.prev->_key))
+                {
+                    size_t prev_index = index;
+                    
+                    while (_hashTable[--prev_index].next != NULL)
+                    {
+                        // Empty
+                    }
+                    
+                    entry->next = _hashTable[prev_index].prev->next;
+                    entry->prev = _hashTable[prev_index].prev;
+                    _hashTable[prev_index].prev->next = entry;
+                    entry->next->prev = entry;
+                }
+                else
+                {
+                    entry->next = &_trailer;
+                    entry->prev = _trailer.prev;
+                    _trailer.prev = entry;
+                    entry->prev->next = entry;
+                }
+                
+                return std::make_pair(Iterator(entry), true);
+            }
+            
+            if (index == hash(_header.next->_key))
+            {
+                _header.next = entry;
+                entry->next = _hashTable[index].next;
+                entry->prev = &_header;
+                _hashTable[index].next->prev = entry;
+                _hashTable[index].next = entry;
+            }
+            else
+            {
+                entry->next = _hashTable[index].next;
+                entry->prev = _hashTable[index].next->prev;
+                entry->next->prev = entry;
+                entry->prev->next = entry;
+                _hashTable[index].next = entry;
+            }
+            
+            return std::make_pair(Iterator(entry), true);
+        }
+        
+        Iterator find(const K& key)
+        {
+            const size_t index = hash(key);
+            Iterator iter(_hashTable[index].next);
+            
+            if (iter._entry != NULL)
+            {
+                for ( ; hash(iter._entry->_key) == index ; ++iter)
+                {
+                    if (iter._entry->_key == key)
+                    {
+                        return iter;
+                    }
+                }
+            }
+            
+            return Iterator(&_trailer);
+        }
+        
+        Iterator erase(Iterator pos)
+        {
+            if (pos._entry != &_header && pos._entry != &_trailer)
+            {
+                Entry* next = pos._entry->next;
+                
+                size_t index = hash(pos._entry->_key);
+                
+                if (_hashTable[index].next == pos._entry && _hashTable[index].prev == pos._entry)
+                {
+                    _hashTable[index].next = NULL;
+                    _hashTable[index].prev = NULL;
+                    
+                    if (_header.next == pos._entry)
+                    {
+                        _header.next = pos._entry->next;
+                        pos._entry->next->prev = &_header;
+                    }
+                    else if (_trailer.prev == pos._entry)
+                    {
+                        _trailer.prev = pos._entry->prev;
+                        pos._entry->prev->next = &_trailer;
+                    }
+                    else
+                    {
+                        pos._entry->prev->next = pos._entry->next;
+                        pos._entry->next->prev = pos._entry->prev;
+                    }
+                    
+                    delete pos._entry;
+                }
+                else if (_hashTable[index].next == pos._entry)
+                {
+                    _hashTable[index].next = pos._entry->next;
+                    if (_header.next == pos._entry)
+                    {
+                        _header.next = pos._entry->next;
+                        pos._entry->next->prev = &_header;
+                    }
+                    else
+                    {
+                        pos._entry->prev->next = pos._entry->next;
+                        pos._entry->next->prev = pos._entry->prev;
+                    }
+                    
+                    delete pos._entry;
+                }
+                else if (_hashTable[index].prev == pos._entry)
+                {
+                    _hashTable[index].prev = pos._entry->prev;
+                    if (_trailer.prev == pos._entry)
+                    {
+                        _trailer.prev = pos._entry->prev;
+                        pos._entry->prev->next = &_trailer;
+                    }
+                    else
+                    {
+                        pos._entry->prev->next = pos._entry->next;
+                        pos._entry->next->prev = pos._entry->prev;
+                    }
+                    
+                    delete pos._entry;
+                }
+                else
+                {
+                    pos._entry->prev->next = pos._entry->next;
+                    pos._entry->next->prev = pos._entry->prev;
+                    
+                    delete pos._entry;
+                }
+                
+                _hashSize--;
+                
+                return Iterator(next);
+            }
+            
+            return Iterator(&_trailer);
+        }
+        
+        V operator[](const K& key)
+        {
+            Iterator iter = find(key);
+            
+            if (iter._entry != _trailer)
+            {
+                return iter._entry->_value;
+            }
+            
+            return V();
+        }
+        
+    private:
+        class Entry
+        {
+        public:
+            K _key;
+            V _value;
+            Entry* next;
+            Entry* prev;
+        };
+        
+        const H _hashFunction;
+        const size_t _capacity;
+        Entry* _hashTable;
+        Entry _header;
+        Entry _trailer;
+        size_t _hashSize;
+        
+        size_t hash(const K& key)
+        {
+            return _hashFunction(key) % _capacity;
+        }
+    };
+}
+
+#endif /* TestHarness_HashMap_h */
