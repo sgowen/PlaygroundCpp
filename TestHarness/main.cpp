@@ -330,8 +330,12 @@ float computeSin(float radians)
     return SIN_TABLE[(int)(radians * RadToIndex) & SIN_MASK];
 }
 
+#include <operator/BitwiseOperatorTest.h>
+
 int main(int argc, const char * argv[])
 {
+    BitwiseOperatorTest::testBitWiseOperations();
+    
     configure();
     
     Point p1(5, 3);
@@ -384,7 +388,7 @@ int main(int argc, const char * argv[])
     TestVectorInt();
     TestVectorString();
     TestVectorCustom();
-    
+
     for (int i = 0; i < 65535; ++i)
     {
         int _id = getNextID();

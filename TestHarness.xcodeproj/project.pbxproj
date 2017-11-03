@@ -28,6 +28,7 @@
 		BB190D201FAB82BB00BDC6D0 /* ContainerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerUtil.h; sourceTree = "<group>"; };
 		BB190D211FAB82BB00BDC6D0 /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
 		BB190D221FAB82BB00BDC6D0 /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		BB190D101FAB80E800BDC6D0 /* TestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				BB5C16931FACBF6C00025D18 /* operator */,
 				BB190D1F1FAB82BB00BDC6D0 /* container */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
 			);
@@ -74,6 +76,14 @@
 				BB190D221FAB82BB00BDC6D0 /* Vector.h */,
 			);
 			path = container;
+			sourceTree = "<group>";
+		};
+		BB5C16931FACBF6C00025D18 /* operator */ = {
+			isa = PBXGroup;
+			children = (
+				BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */,
+			);
+			path = operator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
