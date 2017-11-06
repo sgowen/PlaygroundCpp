@@ -6,11 +6,11 @@
 //  Copyright © 2017 Noctis Games. All rights reserved.
 //
 
-#include <container/HashMapTest.h>
-#include <container/VectorTest.h>
+#include <hash_map/HashMapTest.h>
 #include <operator/BitwiseOperatorTest.h>
 #include <sin_table/SinTableTest.h>
 #include <uniqueness/UniquenessTest.h>
+#include <vector/VectorTest.h>
 
 int main(int argc, const char * argv[])
 {
@@ -19,15 +19,15 @@ int main(int argc, const char * argv[])
     HashMapTest::testHashMap();
     HashMapTest::testHashMap2();
     
-    VectorTest::onBegin();
-    VectorTest::testVectorInt();
-    VectorTest::testVectorString();
-    VectorTest::testVectorCustom();
-    VectorTest::onEnd();
-    
     BitwiseOperatorTest::testBitWiseOperations();
     
     SinTableTest::testSinTable();
 
     UniquenessTest::testUniqueness();
+    
+    VectorTest::onBegin();
+    VectorTest::testVectorInt();
+    VectorTest::testVectorString();
+    VectorTest::testVectorCustom();
+    VectorTest::onEnd();
 }

@@ -1,16 +1,16 @@
 //
 //  HashMapTest.h
-//  TestHarness
+//  HashMap
 //
 //  Created by Stephen Gowen on 11/6/17.
 //  Copyright © 2017 Noctis Games. All rights reserved.
 //
 
-#ifndef TestHarness_HashMapTest_h
-#define TestHarness_HashMapTest_h
+#ifndef NoctisGames_HashMapTest_h
+#define NoctisGames_HashMapTest_h
 
-#include <container/HashMap.h>
-#include <container/ContainerUtil.h>
+#include <hash_map/HashMap.h>
+#include <hash_map/HashMapUtil.h>
 
 #include <iostream>
 #include <string>
@@ -195,7 +195,7 @@ namespace NoctisGames
             
             printEntityManager(entityManager);
             
-            ContainerUtil::cleanUpHashMapOfPointers<Key, Entity, HashKey>(entityManager._entityMap);
+            HashMapUtil::cleanUpHashMapOfPointers<Key, Entity, HashKey>(entityManager._entityMap);
             
             printEntityManager(entityManager);
         }
@@ -235,7 +235,7 @@ namespace NoctisGames
             
             std::cout << "Hash Map Size after erase: " << hmap.size() << std::endl;
             
-            ContainerUtil::cleanUpHashMapOfPointers<std::string, MyCustomClass2, MyKeyHash>(hmap);
+            HashMapUtil::cleanUpHashMapOfPointers<std::string, MyCustomClass2, MyKeyHash>(hmap);
             
             std::cout << "Hash Map Size after erase: " << hmap.size() << std::endl;
         }
@@ -248,4 +248,4 @@ namespace NoctisGames
     };
 }
 
-#endif /* TestHarness_HashMapTest_h */
+#endif /* NoctisGames_HashMapTest_h */

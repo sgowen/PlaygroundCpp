@@ -1,23 +1,22 @@
 //
-//  ContainerUtil.h
-//  TestHarness
+//  VectorUtil.h
+//  Vector
 //
 //  Created by Stephen Gowen on 11/2/17.
 //  Copyright © 2017 Noctis Games. All rights reserved.
 //
 
-#ifndef TestHarness_ContainerUtil_h
-#define TestHarness_ContainerUtil_h
+#ifndef NoctisGames_VectorUtil_h
+#define NoctisGames_VectorUtil_h
 
-#include <container/Vector.h>
-#include <container/HashMap.h>
+#include <vector/Vector.h>
 
 #include <string>
 #include <assert.h>
 
 namespace NoctisGames
 {
-    class ContainerUtil
+    class VectorUtil
     {
     public:
         /// Finds an item by comparing each item's name.
@@ -108,23 +107,12 @@ namespace NoctisGames
             }
         }
         
-        template<typename K, typename T, typename H>
-        static void cleanUpHashMapOfPointers(HashMap<K, T*, H>& hashMap)
-        {
-            for (typename HashMap<K, T*, H>::Iterator i = hashMap.begin(); i != hashMap.end(); )
-            {
-                delete i.second();
-                
-                i = hashMap.erase(i);
-            }
-        }
-        
     private:
         // ctor, copy ctor, and assignment should be private in a Singleton
-        ContainerUtil();
-        ContainerUtil(const ContainerUtil&);
-        ContainerUtil& operator=(const ContainerUtil&);
+        VectorUtil();
+        VectorUtil(const VectorUtil&);
+        VectorUtil& operator=(const VectorUtil&);
     };
 }
 
-#endif /* TestHarness_ContainerUtil_h */
+#endif /* NoctisGames_VectorUtil_h */

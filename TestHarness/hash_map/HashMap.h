@@ -1,6 +1,6 @@
 //
 //  HashMap.h
-//  TestHarness
+//  HashMap
 //
 //  Created by Stephen Gowen on 11/2/17.
 //  Copyright © 2017 Noctis Games. All rights reserved.

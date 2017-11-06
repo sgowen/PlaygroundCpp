@@ -23,15 +23,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BB10DF281FB10C3B00BCCEDF /* HashMapUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMapUtil.h; sourceTree = "<group>"; };
+		BB10DF291FB10C3B00BCCEDF /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
+		BB10DF2A1FB10C3B00BCCEDF /* HashMapTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMapTest.h; sourceTree = "<group>"; };
+		BB10DF2C1FB10C3B00BCCEDF /* VectorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorUtil.h; sourceTree = "<group>"; };
+		BB10DF2D1FB10C3B00BCCEDF /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		BB10DF2E1FB10C3B00BCCEDF /* VectorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		BB190D0E1FAB80E800BDC6D0 /* TestHarness */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestHarness; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		BB190D201FAB82BB00BDC6D0 /* ContainerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerUtil.h; sourceTree = "<group>"; };
-		BB190D211FAB82BB00BDC6D0 /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
-		BB190D221FAB82BB00BDC6D0 /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
-		BBA47DFB1FB0C6BD00D94351 /* HashMapTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMapTest.h; sourceTree = "<group>"; };
 		BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinTableTest.h; sourceTree = "<group>"; };
-		BBA47DFE1FB0CE6400D94351 /* VectorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +47,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB10DF271FB10C3B00BCCEDF /* hash_map */ = {
+			isa = PBXGroup;
+			children = (
+				BB10DF291FB10C3B00BCCEDF /* HashMap.h */,
+				BB10DF2A1FB10C3B00BCCEDF /* HashMapTest.h */,
+				BB10DF281FB10C3B00BCCEDF /* HashMapUtil.h */,
+			);
+			path = hash_map;
+			sourceTree = "<group>";
+		};
+		BB10DF2B1FB10C3B00BCCEDF /* vector */ = {
+			isa = PBXGroup;
+			children = (
+				BB10DF2D1FB10C3B00BCCEDF /* Vector.h */,
+				BB10DF2E1FB10C3B00BCCEDF /* VectorTest.h */,
+				BB10DF2C1FB10C3B00BCCEDF /* VectorUtil.h */,
+			);
+			path = vector;
+			sourceTree = "<group>";
+		};
 		BB190D051FAB80E800BDC6D0 = {
 			isa = PBXGroup;
 			children = (
@@ -65,25 +86,14 @@
 		BB190D101FAB80E800BDC6D0 /* TestHarness */ = {
 			isa = PBXGroup;
 			children = (
-				BB190D1F1FAB82BB00BDC6D0 /* container */,
+				BB10DF271FB10C3B00BCCEDF /* hash_map */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
 				BB5C16931FACBF6C00025D18 /* operator */,
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
 				BBA47DFF1FB0D27E00D94351 /* uniqueness */,
+				BB10DF2B1FB10C3B00BCCEDF /* vector */,
 			);
 			path = TestHarness;
-			sourceTree = "<group>";
-		};
-		BB190D1F1FAB82BB00BDC6D0 /* container */ = {
-			isa = PBXGroup;
-			children = (
-				BB190D201FAB82BB00BDC6D0 /* ContainerUtil.h */,
-				BB190D211FAB82BB00BDC6D0 /* HashMap.h */,
-				BBA47DFB1FB0C6BD00D94351 /* HashMapTest.h */,
-				BB190D221FAB82BB00BDC6D0 /* Vector.h */,
-				BBA47DFE1FB0CE6400D94351 /* VectorTest.h */,
-			);
-			path = container;
 			sourceTree = "<group>";
 		};
 		BB5C16931FACBF6C00025D18 /* operator */ = {
@@ -287,10 +297,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/TestHarness\"",
-					"\"$(SRCROOT)/../dante/src/3rdparty/spine-runtimes/spine-cpp/spine-cpp/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TestHarness\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -305,10 +312,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/TestHarness\"",
-					"\"$(SRCROOT)/../dante/src/3rdparty/spine-runtimes/spine-cpp/spine-cpp/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TestHarness\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
