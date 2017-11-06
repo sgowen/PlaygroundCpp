@@ -15,7 +15,7 @@
 #include <string>
 #include <assert.h>
 
-namespace TestHarness
+namespace NoctisGames
 {
     class ContainerUtil
     {

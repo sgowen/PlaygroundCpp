@@ -6,13 +6,13 @@
 //  Copyright © 2017 Noctis Games. All rights reserved.
 //
 
-#ifndef TestHarness_HashMap_h
-#define TestHarness_HashMap_h
+#ifndef NoctisGames_HashMap_h
+#define NoctisGames_HashMap_h
 
 #include <iostream>
 #include <string>
 
-namespace TestHarness
+namespace NoctisGames
 {
     template <typename K, typename V, typename H>
     class HashMap
@@ -153,20 +153,6 @@ namespace TestHarness
                     entry->prev = &_header;
                     _header.next->prev = entry;
                     _header.next = entry;
-                }
-                else if (index > hash(_header.next->_key) && index < hash(_trailer.prev->_key))
-                {
-                    size_t prev_index = index;
-                    
-                    while (_hashTable[--prev_index].next != NULL)
-                    {
-                        // Empty
-                    }
-                    
-                    entry->next = _hashTable[prev_index].prev->next;
-                    entry->prev = _hashTable[prev_index].prev;
-                    _hashTable[prev_index].prev->next = entry;
-                    entry->next->prev = entry;
                 }
                 else
                 {
@@ -333,4 +319,4 @@ namespace TestHarness
     };
 }
 
-#endif /* TestHarness_HashMap_h */
+#endif /* NoctisGames_HashMap_h */

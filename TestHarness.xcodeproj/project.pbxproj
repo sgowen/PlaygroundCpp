@@ -29,6 +29,10 @@
 		BB190D211FAB82BB00BDC6D0 /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
 		BB190D221FAB82BB00BDC6D0 /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
+		BBA47DFB1FB0C6BD00D94351 /* HashMapTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMapTest.h; sourceTree = "<group>"; };
+		BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinTableTest.h; sourceTree = "<group>"; };
+		BBA47DFE1FB0CE6400D94351 /* VectorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
+		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +65,11 @@
 		BB190D101FAB80E800BDC6D0 /* TestHarness */ = {
 			isa = PBXGroup;
 			children = (
-				BB5C16931FACBF6C00025D18 /* operator */,
 				BB190D1F1FAB82BB00BDC6D0 /* container */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
+				BB5C16931FACBF6C00025D18 /* operator */,
+				BBA47DFC1FB0CBE600D94351 /* sin_table */,
+				BBA47DFF1FB0D27E00D94351 /* uniqueness */,
 			);
 			path = TestHarness;
 			sourceTree = "<group>";
@@ -73,7 +79,9 @@
 			children = (
 				BB190D201FAB82BB00BDC6D0 /* ContainerUtil.h */,
 				BB190D211FAB82BB00BDC6D0 /* HashMap.h */,
+				BBA47DFB1FB0C6BD00D94351 /* HashMapTest.h */,
 				BB190D221FAB82BB00BDC6D0 /* Vector.h */,
+				BBA47DFE1FB0CE6400D94351 /* VectorTest.h */,
 			);
 			path = container;
 			sourceTree = "<group>";
@@ -84,6 +92,22 @@
 				BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */,
 			);
 			path = operator;
+			sourceTree = "<group>";
+		};
+		BBA47DFC1FB0CBE600D94351 /* sin_table */ = {
+			isa = PBXGroup;
+			children = (
+				BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */,
+			);
+			path = sin_table;
+			sourceTree = "<group>";
+		};
+		BBA47DFF1FB0D27E00D94351 /* uniqueness */ = {
+			isa = PBXGroup;
+			children = (
+				BBA47E001FB0D28B00D94351 /* UniquenessTest.h */,
+			);
+			path = uniqueness;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

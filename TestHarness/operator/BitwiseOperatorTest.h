@@ -9,7 +9,7 @@
 #ifndef BitwiseOperatorTest_h
 #define BitwiseOperatorTest_h
 
-namespace TestHarness
+namespace NoctisGames
 {
     class BitwiseOperatorTest
     {

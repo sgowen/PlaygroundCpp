@@ -6,13 +6,13 @@
 //  Copyright © 2017 Noctis Games. All rights reserved.
 //
 
-#ifndef TestHarness_Vector_h
-#define TestHarness_Vector_h
+#ifndef NoctisGames_Vector_h
+#define NoctisGames_Vector_h
 
 #include <memory>
 #include <assert.h>
 
-namespace TestHarness
+namespace NoctisGames
 {
     template <typename T>
     class Vector
@@ -178,4 +178,4 @@ namespace TestHarness
     };
 }
 
-#endif /* TestHarness_Vector_h */
+#endif /* NoctisGames_Vector_h */
