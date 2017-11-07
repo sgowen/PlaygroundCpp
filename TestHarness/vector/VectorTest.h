@@ -218,7 +218,7 @@ namespace NoctisGames
     public:
         static void onBegin()
         {
-            srand(static_cast<unsigned int>(time(nullptr)));
+            srand(static_cast<unsigned int>(time(NULL)));
             
             _gVectorTestStartTime = clock();
         }
