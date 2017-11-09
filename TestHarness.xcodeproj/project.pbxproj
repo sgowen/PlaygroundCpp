@@ -31,6 +31,7 @@
 		BB10DF2E1FB10C3B00BCCEDF /* VectorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		BB190D0E1FAB80E800BDC6D0 /* TestHarness */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestHarness; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BB3BAF681FB4BA9900F5F8B0 /* MemoryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryTest.h; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
 		BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinTableTest.h; sourceTree = "<group>"; };
 		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
@@ -88,12 +89,21 @@
 			children = (
 				BB10DF271FB10C3B00BCCEDF /* hash_map */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
+				BB3BAF671FB4BA8E00F5F8B0 /* memory */,
 				BB5C16931FACBF6C00025D18 /* operator */,
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
 				BBA47DFF1FB0D27E00D94351 /* uniqueness */,
 				BB10DF2B1FB10C3B00BCCEDF /* vector */,
 			);
 			path = TestHarness;
+			sourceTree = "<group>";
+		};
+		BB3BAF671FB4BA8E00F5F8B0 /* memory */ = {
+			isa = PBXGroup;
+			children = (
+				BB3BAF681FB4BA9900F5F8B0 /* MemoryTest.h */,
+			);
+			path = memory;
 			sourceTree = "<group>";
 		};
 		BB5C16931FACBF6C00025D18 /* operator */ = {

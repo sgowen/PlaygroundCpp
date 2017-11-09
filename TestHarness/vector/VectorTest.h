@@ -249,6 +249,7 @@ namespace NoctisGames
             erase(arr);
             insert(arr, 3000);
             add(arr, 5000);
+            
             clear(arr);
         }
         

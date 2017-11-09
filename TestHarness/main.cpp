@@ -7,6 +7,7 @@
 //
 
 #include <hash_map/HashMapTest.h>
+#include <memory/MemoryTest.h>
 #include <operator/BitwiseOperatorTest.h>
 #include <sin_table/SinTableTest.h>
 #include <uniqueness/UniquenessTest.h>
@@ -18,6 +19,8 @@ int main(int argc, const char * argv[])
     
     HashMapTest::testHashMap();
     HashMapTest::testHashMap2();
+    
+    MemoryTest::testMemoryStuff();
     
     BitwiseOperatorTest::testBitWiseOperations();
     
