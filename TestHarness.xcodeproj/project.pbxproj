@@ -35,6 +35,8 @@
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
 		BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinTableTest.h; sourceTree = "<group>"; };
 		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
+		BBAA11371FB90CC800936553 /* Pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
+		BBAA11381FB90D3200936553 /* PoolTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoolTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
 				BB3BAF671FB4BA8E00F5F8B0 /* memory */,
 				BB5C16931FACBF6C00025D18 /* operator */,
+				BBAA11361FB90CB500936553 /* pool */,
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
 				BBA47DFF1FB0D27E00D94351 /* uniqueness */,
 				BB10DF2B1FB10C3B00BCCEDF /* vector */,
@@ -128,6 +131,15 @@
 				BBA47E001FB0D28B00D94351 /* UniquenessTest.h */,
 			);
 			path = uniqueness;
+			sourceTree = "<group>";
+		};
+		BBAA11361FB90CB500936553 /* pool */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA11371FB90CC800936553 /* Pool.h */,
+				BBAA11381FB90D3200936553 /* PoolTest.h */,
+			);
+			path = pool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

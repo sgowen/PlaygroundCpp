@@ -9,6 +9,7 @@
 #include <hash_map/HashMapTest.h>
 #include <memory/MemoryTest.h>
 #include <operator/BitwiseOperatorTest.h>
+#include <pool/PoolTest.h>
 #include <sin_table/SinTableTest.h>
 #include <uniqueness/UniquenessTest.h>
 #include <vector/VectorTest.h>
@@ -23,6 +24,8 @@ int main(int argc, const char * argv[])
     MemoryTest::testMemoryStuff();
     
     BitwiseOperatorTest::testBitWiseOperations();
+    
+    PoolTest::testPool();
     
     SinTableTest::testSinTable();
 
