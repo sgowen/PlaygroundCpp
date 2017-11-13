@@ -45,7 +45,10 @@ namespace NoctisGames
         
         void free(T* object)
         {
-            _objects.push_back(object);
+            if (!_objects.contains(object))
+            {
+                _objects.push_back(object);
+            }
         }
         
     private:

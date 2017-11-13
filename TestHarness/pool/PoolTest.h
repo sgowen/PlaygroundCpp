@@ -12,6 +12,8 @@
 #include <pool/Pool.h>
 #include <vector/Vector.h>
 
+#include <iostream>
+
 namespace NoctisGames
 {
     class MyClass
@@ -34,6 +36,10 @@ namespace NoctisGames
         {
             SomethingThatHasAPool obj;
             
+            using namespace std;
+            
+            cout << "Testing _poolOfClass" << endl;
+            
             MyClass* mc1 = obj._poolOfClass.obtain();
             mc1->_x = 5;
             mc1->_y = 6;
@@ -44,6 +50,11 @@ namespace NoctisGames
             mc2->_y = 7;
             mc2->_z = 8;
             
+            cout << "Freeing mc1" << endl;
+            
+            obj._poolOfClass.free(mc1);
+            
+            // I shouldn't be able to free it again
             obj._poolOfClass.free(mc1);
             
             MyClass* mc3 = obj._poolOfClass.obtain();
@@ -53,33 +64,42 @@ namespace NoctisGames
             
             assert(mc3->_x == 15);
             
-            // Okay, what about a pool of vectors?
+            cout << "mc3->_x == 15, sweet, that means mc3 == mc1" << endl;
+            
+            cout << "Okay, what about a pool of vectors?" << endl;
             
             // I expect to allocate a new Vector here
-            Vector<std::string>* vec1P = obj._poolOfVectorStrings.obtain();
-            Vector<std::string>& vec1 = *vec1P;
+            Vector<string>* vec1P = obj._poolOfVectorStrings.obtain();
+            Vector<string>& vec1 = *vec1P;
             vec1.push_back("This is a test");
             vec1.push_back("This is a test as well");
             vec1.push_back("This is a test too");
             
             // I expect to allocate a new Vector here as well
-            Vector<std::string>* vec2P = obj._poolOfVectorStrings.obtain();
-            Vector<std::string>& vec2 = *vec2P;
+            Vector<string>* vec2P = obj._poolOfVectorStrings.obtain();
+            Vector<string>& vec2 = *vec2P;
             vec2.push_back("This is a test2");
             vec2.push_back("This is a test2 as well");
             vec2.push_back("This is a test2 too");
             
+            cout << "Freeing vec1" << endl;
+            
             // Okay, sure had a lot of fun using that vector, time to throw it away
             obj._poolOfVectorStrings.free(vec1P);
             
+            // I shouldn't be able to free it again
+            obj._poolOfVectorStrings.free(vec1P);
+            
             // We should get back vec1 here, which already has 3 strings in it
-            Vector<std::string>* vec3P = obj._poolOfVectorStrings.obtain();
-            Vector<std::string>& vec3 = *vec3P;
+            Vector<string>* vec3P = obj._poolOfVectorStrings.obtain();
+            Vector<string>& vec3 = *vec3P;
             vec3.push_back("This is a test3");
             vec3.push_back("This is a test3 as well");
             vec3.push_back("This is a test3 too");
             
             assert(vec3.size() == 6);
+            
+            cout << "vec3.size() == 6, which means that vec3 == vec1" << endl;
             
             obj._poolOfVectorStrings.free(vec2P);
             obj._poolOfVectorStrings.free(vec3P);
