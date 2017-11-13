@@ -11,9 +11,6 @@
 
 #include <vector/Vector.h>
 
-#include <string>
-#include <assert.h>
-
 namespace NoctisGames
 {
     class VectorUtil
