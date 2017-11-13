@@ -85,21 +85,26 @@ namespace NoctisGames
             cout << "Freeing vec1" << endl;
             
             // Okay, sure had a lot of fun using that vector, time to throw it away
-            obj._poolOfVectorStrings.free(vec1P);
+            obj._poolOfVectorStrings.free(&vec1);
             
             // I shouldn't be able to free it again
-            obj._poolOfVectorStrings.free(vec1P);
+            obj._poolOfVectorStrings.free(&vec1);
             
             // We should get back vec1 here, which already has 3 strings in it
             Vector<string>* vec3P = obj._poolOfVectorStrings.obtain();
             Vector<string>& vec3 = *vec3P;
+            
+            assert(vec3.size() == 3);
+            
+            cout << "vec3.size() == 3, which means that vec3 == vec1" << endl;
+            
+            vec3.clear();
+            
+            assert(vec3.size() == 0);
+            
             vec3.push_back("This is a test3");
             vec3.push_back("This is a test3 as well");
             vec3.push_back("This is a test3 too");
-            
-            assert(vec3.size() == 6);
-            
-            cout << "vec3.size() == 6, which means that vec3 == vec1" << endl;
             
             obj._poolOfVectorStrings.free(vec2P);
             obj._poolOfVectorStrings.free(vec3P);
