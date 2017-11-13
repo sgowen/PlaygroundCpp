@@ -9,8 +9,7 @@
 #ifndef NoctisGames_HashMap_h
 #define NoctisGames_HashMap_h
 
-#include <iostream>
-#include <string>
+#include <memory>
 
 namespace NoctisGames
 {
