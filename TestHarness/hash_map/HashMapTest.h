@@ -183,7 +183,7 @@ namespace NoctisGames
     class HashMapTest
     {
     public:
-        static void testHashMap()
+        static void test()
         {
             EntityManager entityManager;
             
@@ -198,9 +198,11 @@ namespace NoctisGames
             HashMapUtil::cleanUpHashMapOfPointers<Key, Entity, HashKey>(entityManager._entityMap);
             
             printEntityManager(entityManager);
+            
+            test2();
         }
         
-        static void testHashMap2()
+        static void test2()
         {
             NoctisGames::HashMap<std::string, MyCustomClass2*, MyKeyHash> hmap(65535);
             MyCustomClass2* alpha = new MyCustomClass2(4, 3, 1);

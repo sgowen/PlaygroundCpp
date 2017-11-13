@@ -9,7 +9,8 @@
 #ifndef NoctisGames_Pool_h
 #define NoctisGames_Pool_h
 
-#include <spine/Vector.h>
+#include <vector/Vector.h>
+#include <vector/VectorUtil.h>
 
 namespace NoctisGames
 {
@@ -22,14 +23,19 @@ namespace NoctisGames
             // Empty
         }
         
+        ~Pool()
+        {
+            VectorUtil::cleanUpVectorOfPointers(_objects);
+        }
+        
         T* obtain()
         {
             if (_objects.size() > 0)
             {
-                T* object = _objects.begin();
+                T** object = _objects.begin();
                 _objects.erase(0);
                 
-                return object;
+                return *object;
             }
             else
             {

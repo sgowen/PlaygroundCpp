@@ -14,7 +14,7 @@ namespace NoctisGames
     class BitwiseOperatorTest
     {
     public:
-        static void testBitWiseOperations()
+        static void test()
         {
             int atomicNumMask = 0x7F;
             int typeMask = 0x1FF;

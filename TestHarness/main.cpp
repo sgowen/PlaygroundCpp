@@ -18,22 +18,17 @@ int main(int argc, const char * argv[])
 {
     using namespace NoctisGames;
     
-    HashMapTest::testHashMap();
-    HashMapTest::testHashMap2();
-    
-    MemoryTest::testMemoryStuff();
-    
-    BitwiseOperatorTest::testBitWiseOperations();
-    
-    PoolTest::testPool();
-    
-    SinTableTest::testSinTable();
+    HashMapTest::test();
 
-    UniquenessTest::testUniqueness();
+    MemoryTest::test();
+
+    BitwiseOperatorTest::test();
     
-    VectorTest::onBegin();
-    VectorTest::testVectorInt();
-    VectorTest::testVectorString();
-    VectorTest::testVectorCustom();
-    VectorTest::onEnd();
+    PoolTest::test();
+
+    SinTableTest::test();
+
+    UniquenessTest::test();
+
+    VectorTest::test();
 }

@@ -17,7 +17,7 @@ namespace NoctisGames
     class MemoryTest
     {
     public:
-        static void testMemoryStuff()
+        static void test()
         {
             std::vector<std::string> testVector;
             testVector.push_back("this is a test");

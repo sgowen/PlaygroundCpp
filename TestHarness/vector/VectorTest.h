@@ -262,6 +262,15 @@ namespace NoctisGames
             clear(arr);
         }
         
+        static void test()
+        {
+            onBegin();
+            testVectorInt();
+            testVectorString();
+            testVectorCustom();
+            onEnd();
+        }
+        
     private:
         // ctor, copy ctor, and assignment should be private in a Singleton
         VectorTest();

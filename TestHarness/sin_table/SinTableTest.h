@@ -49,7 +49,7 @@ namespace NoctisGames
     class SinTableTest
     {
     public:
-        static void testSinTable()
+        static void test()
         {
             configure();
             

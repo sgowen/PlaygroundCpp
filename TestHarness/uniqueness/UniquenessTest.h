@@ -21,7 +21,7 @@ namespace NoctisGames
     class UniquenessTest
     {
     public:
-        static void testUniqueness()
+        static void test()
         {
             for (int i = 0; i < 65535; ++i)
             {
