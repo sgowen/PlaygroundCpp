@@ -31,6 +31,7 @@
 		BB10DF2E1FB10C3B00BCCEDF /* VectorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		BB190D0E1FAB80E800BDC6D0 /* TestHarness */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestHarness; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BB3619B61FBB5CBC00518C36 /* EndiannessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndiannessTest.h; sourceTree = "<group>"; };
 		BB3BAF681FB4BA9900F5F8B0 /* MemoryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryTest.h; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
 		BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinTableTest.h; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		BB190D101FAB80E800BDC6D0 /* TestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				BB3619B51FBB5CA800518C36 /* endianness */,
 				BB10DF271FB10C3B00BCCEDF /* hash_map */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
 				BB3BAF671FB4BA8E00F5F8B0 /* memory */,
@@ -99,6 +101,14 @@
 				BB10DF2B1FB10C3B00BCCEDF /* vector */,
 			);
 			path = TestHarness;
+			sourceTree = "<group>";
+		};
+		BB3619B51FBB5CA800518C36 /* endianness */ = {
+			isa = PBXGroup;
+			children = (
+				BB3619B61FBB5CBC00518C36 /* EndiannessTest.h */,
+			);
+			path = endianness;
 			sourceTree = "<group>";
 		};
 		BB3BAF671FB4BA8E00F5F8B0 /* memory */ = {
