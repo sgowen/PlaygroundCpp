@@ -48,6 +48,7 @@ namespace NoctisGames
         
         static void testBools()
         {
+            bool showWindow = true;
             bool showDialog = false;
             bool containsErrors = true;
             
@@ -57,7 +58,12 @@ namespace NoctisGames
             
             printf("showDialog: %d, containsErrors: %d \n", showDialog, containsErrors);
             
+            showWindow |= containsErrors;
+            
+            printf("showWindow: %d, containsErrors: %d \n", showWindow, containsErrors);
+            
             assert(showDialog);
+            assert(showWindow);
         }
         
     private:
