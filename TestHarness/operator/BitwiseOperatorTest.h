@@ -42,6 +42,22 @@ namespace NoctisGames
                 
                 printf("mask1: %d, mask2: %d, result: %d \n", mask1, mask2, result);
             }
+            
+            testBools();
+        }
+        
+        static void testBools()
+        {
+            bool showDialog = false;
+            bool containsErrors = true;
+            
+            printf("showDialog: %d, containsErrors: %d \n", showDialog, containsErrors);
+            
+            showDialog |= containsErrors;
+            
+            printf("showDialog: %d, containsErrors: %d \n", showDialog, containsErrors);
+            
+            assert(showDialog);
         }
         
     private:
