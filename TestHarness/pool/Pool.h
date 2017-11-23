@@ -11,6 +11,7 @@
 
 #include <vector/Vector.h>
 #include <vector/VectorUtil.h>
+#include <vector/Extension.h>
 
 namespace NoctisGames
 {
@@ -39,7 +40,10 @@ namespace NoctisGames
             }
             else
             {
-                return new T();
+                T* ret = MALLOC(T, 1);
+                new (ret) T();
+                
+                return ret;
             }
         }
         
