@@ -9,6 +9,8 @@
 #ifndef NoctisGames_Vector_h
 #define NoctisGames_Vector_h
 
+#include <vector/Extension.h>
+
 #include <stdlib.h>
 #include <memory>
 #include <assert.h>
@@ -127,7 +129,7 @@ namespace NoctisGames
             size_t newCapacity = inCapacity > 0 ? inCapacity : _capacity > 0 ? _capacity * 2 : 1;
             if (newCapacity > _capacity)
             {
-                _buffer = static_cast<T*>(realloc(_buffer, newCapacity * sizeof(T)));
+                _buffer = REALLOC(_buffer, T, newCapacity);
                 _capacity = newCapacity;
             }
         }
@@ -151,10 +153,9 @@ namespace NoctisGames
         {
             assert(n > 0);
             
-            void* ptr = malloc(n * sizeof(T));
-            assert(ptr);
+            T* ptr = MALLOC(T, n);
             
-            return static_cast<T*>(ptr);
+            return ptr;
         }
         
         void deallocate(T* buffer)

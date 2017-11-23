@@ -61,12 +61,12 @@ namespace NoctisGames
         std::cout << std::endl;
     }
     
-    void print(NoctisGames::Vector<MyCustomClass*>& array, const char* _functionName)
+    void print(NoctisGames::Vector<MyCustomClass>& array, const char* _functionName)
     {
         std::cout << _functionName << std::endl;
-        for (MyCustomClass** it = array.begin(); it != array.end(); it++)
+        for (MyCustomClass* it = array.begin(); it != array.end(); it++)
         {
-            std::cout << (*it)->_x << " " << (*it)->_y << " " << (*it)->_z << "|";
+            std::cout << (*it)._x << " " << (*it)._y << " " << (*it)._z << "|";
         }
         std::cout << std::endl;
     }
@@ -135,11 +135,11 @@ namespace NoctisGames
         print(array, __FUNCTION__);
     }
     
-    void generate(NoctisGames::Vector<MyCustomClass*>& array, int size)
+    void generate(NoctisGames::Vector<MyCustomClass>& array, int size)
     {
         for (int i = 0; i < size; ++i)
         {
-            array.push_back(new MyCustomClass(rand() % 10, rand() % 10, rand() % 10));
+            array.push_back(MyCustomClass(rand() % 10, rand() % 10, rand() % 10));
         }
         print(array, __FUNCTION__);
     }
@@ -195,11 +195,11 @@ namespace NoctisGames
         print(array, __FUNCTION__);
     }
     
-    void add(NoctisGames::Vector<MyCustomClass*>& array, size_t size)
+    void add(NoctisGames::Vector<MyCustomClass>& array, size_t size)
     {
         for (size_t i = 0; i < size; ++i)
         {
-            array.push_back(new MyCustomClass(rand() % 10, rand() % 10, rand() % 10));
+            array.push_back(MyCustomClass(rand() % 10, rand() % 10, rand() % 10));
         }
         print(array, __FUNCTION__);
     }
@@ -255,10 +255,12 @@ namespace NoctisGames
         
         static void testVectorCustom()
         {
-            NoctisGames::Vector<MyCustomClass*> arr;
+            printf("testVectorCustom\n");
+            
+            NoctisGames::Vector<MyCustomClass> arr;
             generate(arr, 4);
             add(arr, 4);
-            VectorUtil::cleanUpVectorOfPointers(arr);
+            
             clear(arr);
         }
         

@@ -11,15 +11,15 @@
 
 #include <math.h>
 
-#define SPINE_PI 3.1415927f
-#define SPINE_PI_2 PI * 2
-#define RadDeg 180.0f / SPINE_PI
-#define DegRad SPINE_PI / 180.0f
+#define NG_PI 3.1415927f
+#define NG_PI_2 PI * 2
+#define RadDeg 180.0f / NG_PI
+#define DegRad NG_PI / 180.0f
 
 const int SIN_BITS = 14; // 16KB. Adjust for accuracy.
 const int SIN_MASK = ~(-(1 << SIN_BITS));
 const int SIN_COUNT = SIN_MASK + 1;
-const float RadFull = SPINE_PI * 2;
+const float RadFull = NG_PI * 2;
 const float DegFull = 360;
 const float RadToIndex = SIN_COUNT / RadFull;
 const float DegToIndex = SIN_COUNT / DegFull;

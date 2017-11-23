@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB190D121FAB80E800BDC6D0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D111FAB80E800BDC6D0 /* main.cpp */; };
+		BB5B8CD71FC7867300325A95 /* Extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB5B8CD61FC7867300325A95 /* Extension.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,8 @@
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BB3619B61FBB5CBC00518C36 /* EndiannessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndiannessTest.h; sourceTree = "<group>"; };
 		BB3BAF681FB4BA9900F5F8B0 /* MemoryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryTest.h; sourceTree = "<group>"; };
+		BB5B8CD51FC7867300325A95 /* Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
+		BB5B8CD61FC7867300325A95 /* Extension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Extension.cpp; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
 		BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinTableTest.h; sourceTree = "<group>"; };
 		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
@@ -64,6 +67,8 @@
 		BB10DF2B1FB10C3B00BCCEDF /* vector */ = {
 			isa = PBXGroup;
 			children = (
+				BB5B8CD61FC7867300325A95 /* Extension.cpp */,
+				BB5B8CD51FC7867300325A95 /* Extension.h */,
 				BB10DF2D1FB10C3B00BCCEDF /* Vector.h */,
 				BB10DF2E1FB10C3B00BCCEDF /* VectorTest.h */,
 				BB10DF2C1FB10C3B00BCCEDF /* VectorUtil.h */,
@@ -210,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB190D121FAB80E800BDC6D0 /* main.cpp in Sources */,
+				BB5B8CD71FC7867300325A95 /* Extension.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
