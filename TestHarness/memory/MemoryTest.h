@@ -37,6 +37,15 @@ namespace NoctisGames
             std::cout << "pointer1 " << pointer1 << std::endl;
             std::cout << "pointer2 " << pointer2 << std::endl;
             std::cout << "pointer3 " << pointer3 << std::endl;
+            
+            std::string* stringP = new std::string("Why would you ever want a pointer to a string huh?");
+            std::string stringDeref = *stringP;
+            stringDeref += " You wouldn't!";
+            std::string& stringDerefRef = *stringP;
+            
+            std::cout << "stringP " << stringP << std::endl;
+            std::cout << "&stringDeref " << &stringDeref << std::endl;
+            std::cout << "&stringDerefRef " << &stringDerefRef << std::endl;
         }
         
     private:
