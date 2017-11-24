@@ -16,6 +16,9 @@
 /* Frees memory. Can be used on const types. */
 #define FREE(VALUE) noctisFree((void*)VALUE)
 
+/* Call destructor and then frees memory. Can be used on const types. */
+#define DESTROY(TYPE,VALUE) VALUE->~TYPE(); noctisFree((void*)VALUE)
+
 #include <stdlib.h>
 
 /// Implement this function to use your own memory allocator.

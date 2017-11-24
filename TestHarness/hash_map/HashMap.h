@@ -9,7 +9,7 @@
 #ifndef NoctisGames_HashMap_h
 #define NoctisGames_HashMap_h
 
-#include <memory>
+#include <vector/Vector.h>
 
 namespace NoctisGames
 {
@@ -66,25 +66,27 @@ namespace NoctisGames
             Entry* _entry;
         };
         
-        HashMap(size_t capacity = 65535) : _capacity(capacity), _hashFunction(), _header(), _trailer()
+        HashMap(size_t capacity = 65535) :
+        _hashFunction(),
+        _capacity(capacity),
+        _header(),
+        _trailer(),
+        _hashSize(0)
         {
-            _hashTable = new Entry[capacity];
+            _hashTable.reserve(capacity);
             for (int i = 0; i < _capacity; ++i)
             {
-                _hashTable[i] = Entry();
+                _hashTable.push_back(Entry());
             }
             
             _header.prev = &_header;
             _header.next = &_trailer;
             _trailer.prev = &_header;
             _trailer.next = &_trailer;
-            _hashSize = 0;
         }
         
         ~HashMap()
         {
-            delete [] _hashTable;
-            
             _hashSize = 0;
         }
         
@@ -124,7 +126,8 @@ namespace NoctisGames
             
             size_t index = hash(key);
             
-            Entry* entry = new Entry();
+            Entry* entry = MALLOC(Entry, 1);
+            new (entry) Entry();
             entry->_key = key;
             entry->_value = value;
             
@@ -232,7 +235,7 @@ namespace NoctisGames
                         pos._entry->next->prev = pos._entry->prev;
                     }
                     
-                    delete pos._entry;
+                    DESTROY(Entry, pos._entry);
                 }
                 else if (_hashTable[index].next == pos._entry)
                 {
@@ -248,7 +251,7 @@ namespace NoctisGames
                         pos._entry->next->prev = pos._entry->prev;
                     }
                     
-                    delete pos._entry;
+                    DESTROY(Entry, pos._entry);
                 }
                 else if (_hashTable[index].prev == pos._entry)
                 {
@@ -264,14 +267,14 @@ namespace NoctisGames
                         pos._entry->next->prev = pos._entry->prev;
                     }
                     
-                    delete pos._entry;
+                    DESTROY(Entry, pos._entry);
                 }
                 else
                 {
                     pos._entry->prev->next = pos._entry->next;
                     pos._entry->next->prev = pos._entry->prev;
                     
-                    delete pos._entry;
+                    DESTROY(Entry, pos._entry);
                 }
                 
                 _hashSize--;
@@ -306,7 +309,7 @@ namespace NoctisGames
         
         const H _hashFunction;
         const size_t _capacity;
-        Entry* _hashTable;
+        Vector<Entry> _hashTable;
         Entry _header;
         Entry _trailer;
         size_t _hashSize;

@@ -23,7 +23,7 @@ namespace NoctisGames
             for (size_t i = 0; i < items.size(); )
             {
                 T* item = items[i];
-                FREE(item);
+                DESTROY(T, item);
                 
                 items.erase(i);
             }

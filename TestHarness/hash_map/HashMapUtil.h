@@ -11,6 +11,8 @@
 
 #include <hash_map/HashMap.h>
 
+#include <vector/Extension.h>
+
 #include <string>
 #include <assert.h>
 
@@ -24,7 +26,7 @@ namespace NoctisGames
         {
             for (typename HashMap<K, T*, H>::Iterator i = hashMap.begin(); i != hashMap.end(); )
             {
-                delete i.second();
+                DESTROY(T, i.second());
                 
                 i = hashMap.erase(i);
             }
