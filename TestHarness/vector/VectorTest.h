@@ -39,6 +39,16 @@ namespace NoctisGames
         {
             std::cout << "We are being destructed!: " << _x << _y << _z << std::endl;
         }
+        
+        friend bool operator==(MyCustomClass& lhs, MyCustomClass& rhs)
+        {
+            return lhs._x == rhs._x && lhs._y == rhs._y && lhs._z == rhs._z;
+        }
+        
+        friend bool operator!=(MyCustomClass& lhs, MyCustomClass& rhs)
+        {
+            return !(lhs == rhs);
+        }
     };
     
     void print(NoctisGames::Vector<int>& array, const char* _functionName)
@@ -264,12 +274,33 @@ namespace NoctisGames
             clear(arr);
         }
         
+        static void testOtherStuff()
+        {
+            printf("testOtherStuff\n");
+            
+            NoctisGames::Vector<MyCustomClass> arr;
+            NoctisGames::Vector<MyCustomClass> arr2;
+            NoctisGames::Vector<MyCustomClass> arr3;
+            NoctisGames::Vector<MyCustomClass> arr4;
+            generate(arr, 4);
+            generate(arr2, 5);
+            generate(arr3, 6);
+            generate(arr4, 6);
+            
+            arr = arr3;
+            
+            assert(arr == arr3);
+            assert(arr != arr2);
+            assert(arr3 != arr4);
+        }
+        
         static void test()
         {
             onBegin();
             testVectorInt();
             testVectorString();
             testVectorCustom();
+            testOtherStuff();
             onEnd();
         }
         
