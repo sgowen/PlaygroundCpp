@@ -9,6 +9,7 @@
 #ifndef NoctisGames_HashMap_h
 #define NoctisGames_HashMap_h
 
+#include <vector/Extension.h>
 #include <vector/Vector.h>
 
 namespace NoctisGames

@@ -9,8 +9,8 @@
 #ifndef NoctisGames_VectorUtil_h
 #define NoctisGames_VectorUtil_h
 
-#include <vector/Vector.h>
 #include <vector/Extension.h>
+#include <vector/Vector.h>
 
 namespace NoctisGames
 {

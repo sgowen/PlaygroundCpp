@@ -9,6 +9,7 @@
 #ifndef NoctisGames_VectorTest_h
 #define NoctisGames_VectorTest_h
 
+#include <vector/Extension.h>
 #include <vector/Vector.h>
 #include <vector/VectorUtil.h>
 
