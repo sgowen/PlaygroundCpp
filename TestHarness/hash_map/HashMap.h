@@ -127,7 +127,7 @@ namespace NoctisGames
             
             size_t index = hash(key);
             
-            Entry* entry = MALLOC(Entry, 1);
+            Entry* entry = NEW(Entry);
             new (entry) Entry();
             entry->_key = key;
             entry->_value = value;

@@ -40,7 +40,7 @@ namespace NoctisGames
             }
             else
             {
-                T* ret = MALLOC(T, 1);
+                T* ret = NEW(T);
                 new (ret) T();
                 
                 return ret;
