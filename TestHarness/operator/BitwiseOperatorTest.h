@@ -44,6 +44,8 @@ namespace NoctisGames
             }
             
             testBools();
+            
+            testBitwiseAnd();
         }
         
         static void testBools()
@@ -64,6 +66,30 @@ namespace NoctisGames
             
             assert(showDialog);
             assert(showWindow);
+        }
+        
+        static void testBitwiseAnd()
+        {
+            unsigned char b = 255;
+            int value = b & 0x7F;
+            int huh = b & 0x80;
+            if (huh)
+            {
+                b = '9';
+                value |= (b & 0x7F) << 7;
+                if (b & 0x80)
+                {
+                    b = 'F';
+                    value |= (b & 0x7F) << 14;
+                    if (b & 0x80)
+                    {
+                        b = '4';
+                        value |= (b & 0x7F) << 21;
+                        unsigned char b2 = '7';
+                        if (b & 0x80) value |= (b2 & 0x7F) << 28;
+                    }
+                }
+            }
         }
         
     private:

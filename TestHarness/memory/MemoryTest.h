@@ -12,6 +12,8 @@
 #include <vector>
 #include <string>
 
+#include <vector/Extension.h>
+
 namespace NoctisGames
 {
     class MemoryTest
@@ -46,6 +48,105 @@ namespace NoctisGames
             std::cout << "stringP " << stringP << std::endl;
             std::cout << "&stringDeref " << &stringDeref << std::endl;
             std::cout << "&stringDerefRef " << &stringDerefRef << std::endl;
+            
+            testStringConstructor();
+        }
+        
+        struct DataInput
+        {
+            const unsigned char* cursor;
+            const unsigned char* end;
+        };
+        
+        static unsigned char readByte(DataInput* input)
+        {
+            return *input->cursor++;
+        }
+        
+        static int readVarint(DataInput* input, bool optimizePositive)
+        {
+            unsigned char b = readByte(input);
+            int value = b & 0x7F;
+            if (b & 0x80)
+            {
+                b = readByte(input);
+                value |= (b & 0x7F) << 7;
+                if (b & 0x80)
+                {
+                    b = readByte(input);
+                    value |= (b & 0x7F) << 14;
+                    if (b & 0x80)
+                    {
+                        b = readByte(input);
+                        value |= (b & 0x7F) << 21;
+                        if (b & 0x80) value |= (readByte(input) & 0x7F) << 28;
+                    }
+                }
+            }
+            
+            if (!optimizePositive)
+            {
+                value = (((unsigned int)value >> 1) ^ -(value & 1));
+            }
+            
+            return value;
+        }
+        
+        static char* readString(DataInput* input)
+        {
+            int length = readVarint(input, true);
+            char* string;
+            if (length == 0)
+            {
+                return 0;
+            }
+            string = MALLOC(char, length);
+            memcpy(string, input->cursor, length - 1);
+            input->cursor += length - 1;
+            string[length - 1] = '\0';
+            return string;
+        }
+        
+        static unsigned char* readFile(const char* path, int* length)
+        {
+            unsigned char *data;
+            FILE *file = fopen(path, "rb");
+            if (!file) return 0;
+            
+            fseek(file, 0, SEEK_END);
+            *length = (int)ftell(file);
+            fseek(file, 0, SEEK_SET);
+            
+            data = MALLOC(unsigned char, *length);
+            fread(data, 1, *length, file);
+            fclose(file);
+            
+            return data;
+        }
+        
+        static std::string readStuff(const unsigned char* binary, const int length)
+        {
+            DataInput* input = CALLOC(DataInput, 1);
+            input->cursor = binary;
+            input->end = binary + length;
+            
+            char* char_hash = readString(input);
+            std::string hash = std::string(char_hash);
+            FREE(char_hash);
+            
+            return hash;
+        }
+        
+        static void testStringConstructor()
+        {
+            int length;
+            const unsigned char* binary = readFile("test.txt", &length);
+            
+            std::string stringThatWeRead = readStuff(binary, length);
+            
+            printf("stringThatWeRead: %s", stringThatWeRead.c_str());
+            
+            FREE(binary);
         }
         
     private:
