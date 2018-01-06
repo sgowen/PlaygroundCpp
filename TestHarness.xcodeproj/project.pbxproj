@@ -41,6 +41,7 @@
 		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
 		BBAA11371FB90CC800936553 /* Pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
 		BBAA11381FB90D3200936553 /* PoolTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoolTest.h; sourceTree = "<group>"; };
+		BBEF702920008B0F0030076A /* CastingTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CastingTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 		BB190D101FAB80E800BDC6D0 /* TestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				BBEF702820008AFE0030076A /* casting */,
 				BB3619B51FBB5CA800518C36 /* endianness */,
 				BB10DF271FB10C3B00BCCEDF /* hash_map */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
@@ -155,6 +157,14 @@
 				BBAA11381FB90D3200936553 /* PoolTest.h */,
 			);
 			path = pool;
+			sourceTree = "<group>";
+		};
+		BBEF702820008AFE0030076A /* casting */ = {
+			isa = PBXGroup;
+			children = (
+				BBEF702920008B0F0030076A /* CastingTest.h */,
+			);
+			path = casting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
