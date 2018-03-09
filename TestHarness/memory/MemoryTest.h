@@ -50,6 +50,12 @@ namespace NoctisGames
             std::cout << "&stringDerefRef " << &stringDerefRef << std::endl;
             
             testStringConstructor();
+            
+            std::string OptionString = std::string("imagertemp=-10.0");
+            testStringCopyToken(OptionString);
+            
+            std::string OptionString2 = std::string("");
+            testStringCopyToken(OptionString2);
         }
         
         struct DataInput
@@ -147,6 +153,54 @@ namespace NoctisGames
             printf("stringThatWeRead: %s", stringThatWeRead.c_str());
             
             FREE(binary);
+        }
+        
+#define IMAGER_TEMP_OPTION "imagertemp"
+#define INTEGRATION_TIME_OPTION "integrationtime"
+        
+        static void testStringCopyToken(std::string OptionString)
+        {
+            float ImagerTemp = 0.0f;
+            bool SetImagerTemp = false;
+            bool AutoIntegration = false;
+            const float DEFAULT_INTEGRATION_TIME = 1.0f;
+            float IntegrationTime = DEFAULT_INTEGRATION_TIME;
+            if (OptionString.length() > 0)
+            {
+                char *dup = strdup(OptionString.c_str());
+                char* Token = strtok(dup, ",");
+                
+                while(Token != NULL)
+                {
+                    std::size_t found = std::string(Token).find(IMAGER_TEMP_OPTION);
+                    if(found!=std::string::npos)
+                    {
+                        if(strlen(Token) > strlen(IMAGER_TEMP_OPTION)+2 && Token[strlen(IMAGER_TEMP_OPTION)] == '=')
+                        {
+                            SetImagerTemp = true;
+                            ImagerTemp = atof(Token+strlen(IMAGER_TEMP_OPTION)+1);
+                        }
+                    }
+                    found = std::string(Token).find(INTEGRATION_TIME_OPTION);
+                    if(found!=std::string::npos)
+                    {
+                        if(strlen(Token) > strlen(INTEGRATION_TIME_OPTION)+2 && Token[strlen(INTEGRATION_TIME_OPTION)] == '=')
+                        {
+                            const char* parameter = Token+strlen(INTEGRATION_TIME_OPTION)+1;
+                            float temp = atof(parameter);
+                            if(temp >= 0.01f && temp <= 10.0f)IntegrationTime = temp;
+                            if(temp == 0.0f && !strcmp(parameter, "auto"))
+                            {
+                                IntegrationTime = 0.01f; //Start point for AutoIntegration
+                                AutoIntegration = true;
+                            }
+                        }
+                    }
+                    Token = strtok (NULL, ",");
+                }
+                
+                free(dup);
+            }
         }
         
     private:
