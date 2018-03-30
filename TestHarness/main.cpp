@@ -13,6 +13,7 @@
 #include <operator/BitwiseOperatorTest.h>
 #include <pool/PoolTest.h>
 #include <sin_table/SinTableTest.h>
+#include <threading/ThreadingTest.h>
 #include <uniqueness/UniquenessTest.h>
 #include <vector/VectorTest.h>
 #include <vector/Extension.h>
@@ -30,6 +31,7 @@ int main(int argc, const char * argv[])
     BitwiseOperatorTest::test();
     PoolTest::test();
     SinTableTest::test();
+    ThreadingTest::test();
     UniquenessTest::test();
     VectorTest::test();
 }

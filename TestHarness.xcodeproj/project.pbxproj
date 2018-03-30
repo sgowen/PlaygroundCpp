@@ -37,6 +37,7 @@
 		BB5B8CD51FC7867300325A95 /* Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
 		BB5B8CD61FC7867300325A95 /* Extension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Extension.cpp; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
+		BB5D5A42206EC2BE00FB53FD /* ThreadingTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadingTest.h; sourceTree = "<group>"; };
 		BBA47DFD1FB0CBF200D94351 /* SinTableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinTableTest.h; sourceTree = "<group>"; };
 		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
 		BBAA11371FB90CC800936553 /* Pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 				BB5C16931FACBF6C00025D18 /* operator */,
 				BBAA11361FB90CB500936553 /* pool */,
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
+				BB5D5A41206EC29B00FB53FD /* threading */,
 				BBA47DFF1FB0D27E00D94351 /* uniqueness */,
 				BB10DF2B1FB10C3B00BCCEDF /* vector */,
 			);
@@ -132,6 +134,14 @@
 				BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */,
 			);
 			path = operator;
+			sourceTree = "<group>";
+		};
+		BB5D5A41206EC29B00FB53FD /* threading */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D5A42206EC2BE00FB53FD /* ThreadingTest.h */,
+			);
+			path = threading;
 			sourceTree = "<group>";
 		};
 		BBA47DFC1FB0CBE600D94351 /* sin_table */ = {
@@ -193,7 +203,7 @@
 		BB190D061FAB80E800BDC6D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Noctis Games";
 				TargetAttributes = {
 					BB190D0D1FAB80E800BDC6D0 = {
@@ -339,7 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V5EV5R3XG;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -354,7 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V5EV5R3XG;
 				GCC_C_LANGUAGE_STANDARD = c99;

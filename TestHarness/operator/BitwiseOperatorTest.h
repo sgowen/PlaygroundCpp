@@ -46,6 +46,8 @@ namespace NoctisGames
             testBools();
             
             testBitwiseAnd();
+            
+            testShifts();
         }
         
         static void testBools()
@@ -90,6 +92,58 @@ namespace NoctisGames
                     }
                 }
             }
+        }
+        
+        static void testShifts()
+        {
+            {
+                uint8_t Value = 80;
+                testShiftImpl1(Value*16);
+            }
+            {
+                uint16_t Value = 80;
+                testShiftImpl1(Value);
+            }
+            
+            {
+                uint8_t Value = 80;
+                testShiftImpl2(Value*16);
+            }
+            {
+                uint8_t Value = 80;
+                Value = Value << 4;
+                testShiftImpl2(Value);
+            }
+            {
+                uint16_t Value = 80;
+                Value <<= 4;
+                testShiftImpl2(Value);
+            }
+            {
+                int Value = 80;
+                uint8_t v = Value & 0xFF;
+                testShiftImpl2(v*16);
+            }
+        }
+        
+        static void testShiftImpl1(uint16_t Data)
+        {
+            uint8_t Bytes[2];
+            Bytes[1] = (Data >> 8);
+            Bytes[0] = (uint8_t) (Data & 0x00ff);
+            
+            printf("1 Bytes[0] %d \n", Bytes[0]);
+            printf("1 Bytes[1] %d \n", Bytes[1]);
+        }
+        
+        static void testShiftImpl2(uint16_t Data)
+        {
+            uint8_t Bytes[2];
+            Bytes[1] = (Data >> 8);
+            Bytes[0] = (Data & 0xff);
+            
+            printf("2 Bytes[0] %d \n", Bytes[0]);
+            printf("2 Bytes[1] %d \n", Bytes[1]);
         }
         
     private:
