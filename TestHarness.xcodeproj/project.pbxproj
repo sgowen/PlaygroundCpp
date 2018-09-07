@@ -34,6 +34,7 @@
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BB3619B61FBB5CBC00518C36 /* EndiannessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndiannessTest.h; sourceTree = "<group>"; };
 		BB3BAF681FB4BA9900F5F8B0 /* MemoryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryTest.h; sourceTree = "<group>"; };
+		BB47DA562142EFB2006E3A37 /* MathTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathTest.h; sourceTree = "<group>"; };
 		BB5B8CD51FC7867300325A95 /* Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
 		BB5B8CD61FC7867300325A95 /* Extension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Extension.cpp; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitwiseOperatorTest.h; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 				BB3619B51FBB5CA800518C36 /* endianness */,
 				BB10DF271FB10C3B00BCCEDF /* hash_map */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
+				BB47DA552142EFB2006E3A37 /* math */,
 				BB3BAF671FB4BA8E00F5F8B0 /* memory */,
 				BB5C16931FACBF6C00025D18 /* operator */,
 				BBAA11361FB90CB500936553 /* pool */,
@@ -126,6 +128,14 @@
 				BB3BAF681FB4BA9900F5F8B0 /* MemoryTest.h */,
 			);
 			path = memory;
+			sourceTree = "<group>";
+		};
+		BB47DA552142EFB2006E3A37 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				BB47DA562142EFB2006E3A37 /* MathTest.h */,
+			);
+			path = math;
 			sourceTree = "<group>";
 		};
 		BB5C16931FACBF6C00025D18 /* operator */ = {
