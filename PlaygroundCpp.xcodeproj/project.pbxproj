@@ -30,7 +30,7 @@
 		BB10DF2C1FB10C3B00BCCEDF /* VectorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorUtil.h; sourceTree = "<group>"; };
 		BB10DF2D1FB10C3B00BCCEDF /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		BB10DF2E1FB10C3B00BCCEDF /* VectorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
-		BB190D0E1FAB80E800BDC6D0 /* TestHarness */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestHarness; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB190D0E1FAB80E800BDC6D0 /* PlaygroundCpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlaygroundCpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BB3619B61FBB5CBC00518C36 /* EndiannessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndiannessTest.h; sourceTree = "<group>"; };
 		BB3BAF681FB4BA9900F5F8B0 /* MemoryTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryTest.h; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		BB190D051FAB80E800BDC6D0 = {
 			isa = PBXGroup;
 			children = (
-				BB190D101FAB80E800BDC6D0 /* TestHarness */,
+				BB190D101FAB80E800BDC6D0 /* PlaygroundCpp */,
 				BB190D0F1FAB80E800BDC6D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,12 +90,12 @@
 		BB190D0F1FAB80E800BDC6D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB190D0E1FAB80E800BDC6D0 /* TestHarness */,
+				BB190D0E1FAB80E800BDC6D0 /* PlaygroundCpp */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BB190D101FAB80E800BDC6D0 /* TestHarness */ = {
+		BB190D101FAB80E800BDC6D0 /* PlaygroundCpp */ = {
 			isa = PBXGroup;
 			children = (
 				BBEF702820008AFE0030076A /* casting */,
@@ -111,7 +111,7 @@
 				BBA47DFF1FB0D27E00D94351 /* uniqueness */,
 				BB10DF2B1FB10C3B00BCCEDF /* vector */,
 			);
-			path = TestHarness;
+			path = PlaygroundCpp;
 			sourceTree = "<group>";
 		};
 		BB3619B51FBB5CA800518C36 /* endianness */ = {
@@ -190,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB190D0D1FAB80E800BDC6D0 /* TestHarness */ = {
+		BB190D0D1FAB80E800BDC6D0 /* PlaygroundCpp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB190D151FAB80E800BDC6D0 /* Build configuration list for PBXNativeTarget "TestHarness" */;
+			buildConfigurationList = BB190D151FAB80E800BDC6D0 /* Build configuration list for PBXNativeTarget "PlaygroundCpp" */;
 			buildPhases = (
 				BB190D0A1FAB80E800BDC6D0 /* Sources */,
 				BB190D0B1FAB80E800BDC6D0 /* Frameworks */,
@@ -202,9 +202,9 @@
 			);
 			dependencies = (
 			);
-			name = TestHarness;
+			name = PlaygroundCpp;
 			productName = TestHarness;
-			productReference = BB190D0E1FAB80E800BDC6D0 /* TestHarness */;
+			productReference = BB190D0E1FAB80E800BDC6D0 /* PlaygroundCpp */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +213,7 @@
 		BB190D061FAB80E800BDC6D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Noctis Games";
 				TargetAttributes = {
 					BB190D0D1FAB80E800BDC6D0 = {
@@ -222,19 +222,20 @@
 					};
 				};
 			};
-			buildConfigurationList = BB190D091FAB80E800BDC6D0 /* Build configuration list for PBXProject "TestHarness" */;
+			buildConfigurationList = BB190D091FAB80E800BDC6D0 /* Build configuration list for PBXProject "PlaygroundCpp" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = BB190D051FAB80E800BDC6D0;
 			productRefGroup = BB190D0F1FAB80E800BDC6D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB190D0D1FAB80E800BDC6D0 /* TestHarness */,
+				BB190D0D1FAB80E800BDC6D0 /* PlaygroundCpp */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +267,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -273,6 +275,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -321,6 +324,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -328,6 +332,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -365,7 +370,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TestHarness\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/PlaygroundCpp\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -380,7 +385,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TestHarness\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/PlaygroundCpp\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -388,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB190D091FAB80E800BDC6D0 /* Build configuration list for PBXProject "TestHarness" */ = {
+		BB190D091FAB80E800BDC6D0 /* Build configuration list for PBXProject "PlaygroundCpp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB190D131FAB80E800BDC6D0 /* Debug */,
@@ -397,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB190D151FAB80E800BDC6D0 /* Build configuration list for PBXNativeTarget "TestHarness" */ = {
+		BB190D151FAB80E800BDC6D0 /* Build configuration list for PBXNativeTarget "PlaygroundCpp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB190D161FAB80E800BDC6D0 /* Debug */,
