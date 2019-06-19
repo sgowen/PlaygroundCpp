@@ -1,9 +1,9 @@
 //
 //  SinTableTest.h
-//  TestHarness
+//  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/6/17.
-//  Copyright © 2017 Noctis Games. All rights reserved.
+//  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
 #ifndef SinTableTest_h
@@ -44,26 +44,23 @@ float computeSin(float radians)
     return SIN_TABLE[(int)(radians * RadToIndex) & SIN_MASK];
 }
 
-namespace NoctisGames
+class SinTableTest
 {
-    class SinTableTest
+public:
+    static void test()
     {
-    public:
-        static void test()
-        {
-            configure();
-            
-            float value = computeSin(2);
-            
-            printf("Value is %f \n", value);
-        }
+        configure();
         
-    private:
-        // ctor, copy ctor, and assignment should be private in a Singleton
-        SinTableTest();
-        SinTableTest(const SinTableTest&);
-        SinTableTest& operator=(const SinTableTest&);
-    };
-}
+        float value = computeSin(2);
+        
+        printf("Value is %f \n", value);
+    }
+    
+private:
+    // ctor, copy ctor, and assignment should be private in a Singleton
+    SinTableTest();
+    SinTableTest(const SinTableTest&);
+    SinTableTest& operator=(const SinTableTest&);
+};
 
 #endif /* SinTableTest_h */

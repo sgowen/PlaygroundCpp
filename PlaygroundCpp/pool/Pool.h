@@ -1,63 +1,60 @@
 //
 //  Pool.h
-//  TestHarness
+//  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/12/17.
-//  Copyright © 2017 Noctis Games. All rights reserved.
+//  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef NoctisGames_Pool_h
-#define NoctisGames_Pool_h
+#ifndef sgowen_Pool_h
+#define sgowen_Pool_h
 
 #include <vector/Vector.h>
 #include <vector/VectorUtil.h>
 #include <vector/Extension.h>
 
-namespace NoctisGames
+template <typename T>
+class Pool
 {
-    template <typename T>
-    class Pool
+public:
+    Pool()
     {
-    public:
-        Pool()
+        // Empty
+    }
+    
+    ~Pool()
+    {
+        VectorUtil::cleanUpVectorOfPointers(_objects);
+    }
+    
+    T* obtain()
+    {
+        if (_objects.size() > 0)
         {
-            // Empty
+            T** object = _objects.begin();
+            _objects.erase(0);
+            
+            return *object;
         }
-        
-        ~Pool()
+        else
         {
-            VectorUtil::cleanUpVectorOfPointers(_objects);
+            T* ret = NEW(T);
+            new (ret) T();
+            
+            return ret;
         }
-        
-        T* obtain()
+    }
+    
+    void free(T* object)
+    {
+        if (!_objects.contains(object))
         {
-            if (_objects.size() > 0)
-            {
-                T** object = _objects.begin();
-                _objects.erase(0);
-                
-                return *object;
-            }
-            else
-            {
-                T* ret = NEW(T);
-                new (ret) T();
-                
-                return ret;
-            }
+            _objects.push_back(object);
         }
-        
-        void free(T* object)
-        {
-            if (!_objects.contains(object))
-            {
-                _objects.push_back(object);
-            }
-        }
-        
-    private:
-        Vector<T*> _objects;
-    };
-}
+    }
+    
+private:
+    Vector<T*> _objects;
+};
 
-#endif /* NoctisGames_Pool_h */
+#endif /* sgowen_Pool_h */

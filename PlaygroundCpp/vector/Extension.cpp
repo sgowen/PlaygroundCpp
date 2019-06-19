@@ -1,9 +1,9 @@
 //
 //  Extension.cpp
-//  TestHarness
+//  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/2/17.
-//  Copyright © 2017 Noctis Games. All rights reserved.
+//  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
 #include <vector/Extension.h>
@@ -11,77 +11,74 @@
 #include <iostream>
 #include <assert.h>
 
-namespace NoctisGames
+NGExtension* NGExtension::_instance = NULL;
+
+void NGExtension::setInstance(NGExtension* inValue)
 {
-    NGExtension* NGExtension::_instance = NULL;
+    assert(!_instance);
     
-    void NGExtension::setInstance(NGExtension* inValue)
+    _instance = inValue;
+}
+
+NGExtension* NGExtension::getInstance()
+{
+    assert(_instance);
+    
+    return _instance;
+}
+
+NGExtension::NGExtension()
+{
+    // Empty
+}
+
+NGExtension::~NGExtension()
+{
+    // Empty
+}
+
+DefaultNGExtension* DefaultNGExtension::getInstance()
+{
+    static DefaultNGExtension ret;
+    return &ret;
+}
+
+DefaultNGExtension::DefaultNGExtension() : NGExtension()
+{
+    // Empty
+}
+
+DefaultNGExtension::~DefaultNGExtension()
+{
+    // Empty
+}
+
+void* DefaultNGExtension::ngAlloc(size_t size, const char* file, int line)
+{
+    printf("ng size: %lu, file: %s, line: %d \n", size, file, line);
+    
+    return malloc(size);
+}
+
+void* DefaultNGExtension::ngCalloc(size_t num, size_t size, const char* file, int line)
+{
+    void* ptr = ngAlloc(num * size, file, line);
+    if (ptr)
     {
-        assert(!_instance);
-        
-        _instance = inValue;
+        memset(ptr, 0, num * size);
     }
     
-    NGExtension* NGExtension::getInstance()
-    {
-        assert(_instance);
-        
-        return _instance;
-    }
+    return ptr;
+}
+
+void* DefaultNGExtension::ngRealloc(void* ptr, size_t size, const char* file, int line)
+{
+    printf("ng size: %lu, file: %s, line: %d \n", size, file, line);
     
-    NGExtension::NGExtension()
-    {
-        // Empty
-    }
-    
-    NGExtension::~NGExtension()
-    {
-        // Empty
-    }
-    
-    DefaultNGExtension* DefaultNGExtension::getInstance()
-    {
-        static DefaultNGExtension ret;
-        return &ret;
-    }
-    
-    DefaultNGExtension::DefaultNGExtension() : NGExtension()
-    {
-        // Empty
-    }
-    
-    DefaultNGExtension::~DefaultNGExtension()
-    {
-        // Empty
-    }
-    
-    void* DefaultNGExtension::ngAlloc(size_t size, const char* file, int line)
-    {
-        printf("ng size: %lu, file: %s, line: %d \n", size, file, line);
-        
-        return malloc(size);
-    }
-    
-    void* DefaultNGExtension::ngCalloc(size_t num, size_t size, const char* file, int line)
-    {
-        void* ptr = ngAlloc(num * size, file, line);
-        if (ptr)
-        {
-            memset(ptr, 0, num * size);
-        }
-        
-        return ptr;
-    }
-    
-    void* DefaultNGExtension::ngRealloc(void* ptr, size_t size, const char* file, int line)
-    {
-        printf("ng size: %lu, file: %s, line: %d \n", size, file, line);
-        
-        return realloc(ptr, size);
-    }
-    
-    void DefaultNGExtension::ngFree(void* mem)
-    {
-        free(mem);
-    }
+    return realloc(ptr, size);
+}
+
+void DefaultNGExtension::ngFree(void* mem)
+{
+    free(mem);
 }

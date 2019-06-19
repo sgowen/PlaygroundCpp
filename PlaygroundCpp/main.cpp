@@ -1,9 +1,9 @@
 //
 //  main.cpp
-//  TestHarness
+//  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/2/17.
-//  Copyright © 2017 Noctis Games. All rights reserved.
+//  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
 #include <casting/CastingTest.h>
@@ -21,8 +21,6 @@
 
 int main(int argc, const char * argv[])
 {
-    using namespace NoctisGames;
-    
     NGExtension::setInstance(DefaultNGExtension::getInstance());
     
 //    CastingTest::test();

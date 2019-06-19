@@ -3,38 +3,35 @@
 //  Vector
 //
 //  Created by Stephen Gowen on 11/2/17.
-//  Copyright © 2017 Noctis Games. All rights reserved.
+//  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef NoctisGames_VectorUtil_h
-#define NoctisGames_VectorUtil_h
+#ifndef sgowen_VectorUtil_h
+#define sgowen_VectorUtil_h
 
 #include <vector/Extension.h>
 #include <vector/Vector.h>
 
-namespace NoctisGames
+class VectorUtil
 {
-    class VectorUtil
+public:
+    template<typename T>
+    static void cleanUpVectorOfPointers(Vector<T*>& items)
     {
-    public:        
-        template<typename T>
-        static void cleanUpVectorOfPointers(Vector<T*>& items)
+        for (size_t i = 0; i < items.size(); )
         {
-            for (size_t i = 0; i < items.size(); )
-            {
-                T* item = items[i];
-                DESTROY(T, item);
-                
-                items.erase(i);
-            }
+            T* item = items[i];
+            DESTROY(T, item);
+            
+            items.erase(i);
         }
-        
-    private:
-        // ctor, copy ctor, and assignment should be private in a Singleton
-        VectorUtil();
-        VectorUtil(const VectorUtil&);
-        VectorUtil& operator=(const VectorUtil&);
-    };
-}
+    }
+    
+private:
+    // ctor, copy ctor, and assignment should be private in a Singleton
+    VectorUtil();
+    VectorUtil(const VectorUtil&);
+    VectorUtil& operator=(const VectorUtil&);
+};
 
-#endif /* NoctisGames_VectorUtil_h */
+#endif /* sgowen_VectorUtil_h */
