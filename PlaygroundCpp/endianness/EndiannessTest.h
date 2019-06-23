@@ -20,16 +20,15 @@ public:
         using namespace std;
         
         cout << "Are we on a Little Endian Machine? " << endl;
-        cout << "isLittleEndian() = " << isLittleEndian() << endl;
+        cout << "isLittleEndian() = " << (isLittleEndian() ? "true" : "false") << endl;
         
         cout << "Let's dig a little deeper and print some stuff" << endl;
         printInts();
     }
     
-    static int isLittleEndian()
+    static bool isLittleEndian()
     {
-        volatile uint32_t i=0x01234567;
-        // return 0 for big endian, 1 for little endian.
+        volatile uint32_t i = 0x01234567;
         return (*((uint8_t*)(&i))) == 0x67;
     }
     
