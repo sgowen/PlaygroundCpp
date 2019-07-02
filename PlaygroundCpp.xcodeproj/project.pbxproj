@@ -24,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BB0CD83022CBE4E400F94CB8 /* Sample.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sample.dat; sourceTree = "<group>"; };
+		BB0CD83122CBE4E400F94CB8 /* RandomFileAccessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomFileAccessTest.h; sourceTree = "<group>"; };
 		BB10DF281FB10C3B00BCCEDF /* HashMapUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMapUtil.h; sourceTree = "<group>"; };
 		BB10DF291FB10C3B00BCCEDF /* HashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMap.h; sourceTree = "<group>"; };
 		BB10DF2A1FB10C3B00BCCEDF /* HashMapTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashMapTest.h; sourceTree = "<group>"; };
@@ -57,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB0CD82F22CBE4E400F94CB8 /* random_file_access */ = {
+			isa = PBXGroup;
+			children = (
+				BB0CD83022CBE4E400F94CB8 /* Sample.dat */,
+				BB0CD83122CBE4E400F94CB8 /* RandomFileAccessTest.h */,
+			);
+			path = random_file_access;
+			sourceTree = "<group>";
+		};
 		BB10DF271FB10C3B00BCCEDF /* hash_map */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +117,7 @@
 				BB3BAF671FB4BA8E00F5F8B0 /* memory */,
 				BB5C16931FACBF6C00025D18 /* operator */,
 				BBAA11361FB90CB500936553 /* pool */,
+				BB0CD82F22CBE4E400F94CB8 /* random_file_access */,
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
 				BB5D5A41206EC29B00FB53FD /* threading */,
 				BBA47DFF1FB0D27E00D94351 /* uniqueness */,

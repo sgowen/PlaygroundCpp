@@ -13,6 +13,7 @@
 #include <memory/MemoryTest.h>
 #include <operator/BitwiseOperatorTest.h>
 #include <pool/PoolTest.h>
+#include <random_file_access/RandomFileAccessTest.h>
 #include <sin_table/SinTableTest.h>
 #include <threading/ThreadingTest.h>
 #include <uniqueness/UniquenessTest.h>
@@ -26,10 +27,11 @@ int main(int argc, const char * argv[])
 //    CastingTest::test();
 //    EndiannessTest::test();
 //    HashMapTest::test();
-    MathTest::test();
+//    MathTest::test();
 //    MemoryTest::test();
 //    BitwiseOperatorTest::test();
 //    PoolTest::test();
+    RandomFileAccessTest::test();
 //    SinTableTest::test();
 //    ThreadingTest::test();
 //    UniquenessTest::test();
