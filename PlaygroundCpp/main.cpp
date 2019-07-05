@@ -15,12 +15,13 @@
 #include <pool/PoolTest.h>
 #include <random_file_access/RandomFileAccessTest.h>
 #include <sin_table/SinTableTest.h>
+#include <string_split/StringSplitTest.h>
 #include <threading/ThreadingTest.h>
 #include <uniqueness/UniquenessTest.h>
 #include <vector/VectorTest.h>
 #include <vector/Extension.h>
 
-int main(int argc, const char * argv[])
+int main(int argc, const char* argv[])
 {
     NGExtension::setInstance(DefaultNGExtension::getInstance());
     
@@ -31,8 +32,9 @@ int main(int argc, const char * argv[])
 //    MemoryTest::test();
 //    BitwiseOperatorTest::test();
 //    PoolTest::test();
-    RandomFileAccessTest::test();
+//    RandomFileAccessTest::test();
 //    SinTableTest::test();
+    StringSplitTest::test();
 //    ThreadingTest::test();
 //    UniquenessTest::test();
 //    VectorTest::test();
