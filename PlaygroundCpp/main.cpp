@@ -6,6 +6,7 @@
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
+#include <bitmask/BitMaskTest.h>
 #include <casting/CastingTest.h>
 #include <endianness/EndiannessTest.h>
 #include <hash_map/HashMapTest.h>
@@ -25,6 +26,7 @@ int main(int argc, const char* argv[])
 {
     NGExtension::setInstance(DefaultNGExtension::getInstance());
     
+    BitMaskTest::test();
 //    CastingTest::test();
 //    EndiannessTest::test();
 //    HashMapTest::test();
@@ -34,7 +36,7 @@ int main(int argc, const char* argv[])
 //    PoolTest::test();
 //    RandomFileAccessTest::test();
 //    SinTableTest::test();
-    StringSplitTest::test();
+//    StringSplitTest::test();
 //    ThreadingTest::test();
 //    UniquenessTest::test();
 //    VectorTest::test();

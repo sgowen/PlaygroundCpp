@@ -46,6 +46,7 @@
 		BBA47E001FB0D28B00D94351 /* UniquenessTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniquenessTest.h; sourceTree = "<group>"; };
 		BBAA11371FB90CC800936553 /* Pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
 		BBAA11381FB90D3200936553 /* PoolTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoolTest.h; sourceTree = "<group>"; };
+		BBB209F42368F128000914C6 /* BitMaskTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitMaskTest.h; sourceTree = "<group>"; };
 		BBEF702920008B0F0030076A /* CastingTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CastingTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +111,7 @@
 		BB190D101FAB80E800BDC6D0 /* PlaygroundCpp */ = {
 			isa = PBXGroup;
 			children = (
+				BBB209F32368F128000914C6 /* bitmask */,
 				BBEF702820008AFE0030076A /* casting */,
 				BB3619B51FBB5CA800518C36 /* endianness */,
 				BB10DF271FB10C3B00BCCEDF /* hash_map */,
@@ -201,6 +203,14 @@
 			path = pool;
 			sourceTree = "<group>";
 		};
+		BBB209F32368F128000914C6 /* bitmask */ = {
+			isa = PBXGroup;
+			children = (
+				BBB209F42368F128000914C6 /* BitMaskTest.h */,
+			);
+			path = bitmask;
+			sourceTree = "<group>";
+		};
 		BBEF702820008AFE0030076A /* casting */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +245,7 @@
 		BB190D061FAB80E800BDC6D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Noctis Games";
 				TargetAttributes = {
 					BB190D0D1FAB80E800BDC6D0 = {
@@ -387,6 +397,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73DSXQLA96;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -402,6 +413,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73DSXQLA96;
 				GCC_C_LANGUAGE_STANDARD = c99;
