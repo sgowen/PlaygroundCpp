@@ -14,6 +14,7 @@
 #include <memory/MemoryTest.h>
 #include <operator/BitwiseOperatorTest.h>
 #include <pool/PoolTest.h>
+#include <queue/QueueTest.h>
 #include <random_file_access/RandomFileAccessTest.h>
 #include <sin_table/SinTableTest.h>
 #include <string_split/StringSplitTest.h>
@@ -26,7 +27,7 @@ int main(int argc, const char* argv[])
 {
     NGExtension::setInstance(DefaultNGExtension::getInstance());
     
-    BitMaskTest::test();
+//    BitMaskTest::test();
 //    CastingTest::test();
 //    EndiannessTest::test();
 //    HashMapTest::test();
@@ -34,6 +35,7 @@ int main(int argc, const char* argv[])
 //    MemoryTest::test();
 //    BitwiseOperatorTest::test();
 //    PoolTest::test();
+    QueueTest::test();
 //    RandomFileAccessTest::test();
 //    SinTableTest::test();
 //    StringSplitTest::test();

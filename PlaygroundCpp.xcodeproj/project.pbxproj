@@ -47,6 +47,7 @@
 		BBAA11371FB90CC800936553 /* Pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
 		BBAA11381FB90D3200936553 /* PoolTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoolTest.h; sourceTree = "<group>"; };
 		BBB209F42368F128000914C6 /* BitMaskTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitMaskTest.h; sourceTree = "<group>"; };
+		BBE17CB923A1CD6600695E31 /* QueueTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueTest.h; sourceTree = "<group>"; };
 		BBEF702920008B0F0030076A /* CastingTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CastingTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +121,7 @@
 				BB3BAF671FB4BA8E00F5F8B0 /* memory */,
 				BB5C16931FACBF6C00025D18 /* operator */,
 				BBAA11361FB90CB500936553 /* pool */,
+				BBE17CB823A1CD6600695E31 /* queue */,
 				BB0CD82F22CBE4E400F94CB8 /* random_file_access */,
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
 				BB2D089822CC50D9000E3BC3 /* string_split */,
@@ -209,6 +211,14 @@
 				BBB209F42368F128000914C6 /* BitMaskTest.h */,
 			);
 			path = bitmask;
+			sourceTree = "<group>";
+		};
+		BBE17CB823A1CD6600695E31 /* queue */ = {
+			isa = PBXGroup;
+			children = (
+				BBE17CB923A1CD6600695E31 /* QueueTest.h */,
+			);
+			path = queue;
 			sourceTree = "<group>";
 		};
 		BBEF702820008AFE0030076A /* casting */ = {
