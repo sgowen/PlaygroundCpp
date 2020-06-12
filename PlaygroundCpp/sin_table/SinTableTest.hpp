@@ -1,13 +1,12 @@
 //
-//  SinTableTest.h
+//  SinTableTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/6/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef SinTableTest_h
-#define SinTableTest_h
+#pragma once
 
 #include <math.h>
 
@@ -57,10 +56,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     SinTableTest();
+    ~SinTableTest();
     SinTableTest(const SinTableTest&);
     SinTableTest& operator=(const SinTableTest&);
 };
-
-#endif /* SinTableTest_h */

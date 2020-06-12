@@ -1,16 +1,15 @@
 //
-//  HashMapTest.h
+//  HashMapTest.hpp
 //  HashMap
 //
 //  Created by Stephen Gowen on 11/6/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_HashMapTest_h
-#define sgowen_HashMapTest_h
+#pragma once
 
-#include <hash_map/HashMap.h>
-#include <hash_map/HashMapUtil.h>
+#include <hash_map/HashMap.hpp>
+#include <hash_map/HashMapUtil.hpp>
 
 #include <iostream>
 #include <string>
@@ -241,10 +240,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     HashMapTest();
+    ~HashMapTest();
     HashMapTest(const HashMapTest&);
     HashMapTest& operator=(const HashMapTest&);
 };
-
-#endif /* sgowen_HashMapTest_h */

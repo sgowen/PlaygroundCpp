@@ -1,13 +1,12 @@
 //
-//  ThreadingTest.h
+//  ThreadingTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 3/30/18.
 //  Copyright © 2018 Stephen Gowen. All rights reserved.
 //
 
-#ifndef ThreadingTest_h
-#define ThreadingTest_h
+#pragma once
 
 #include <iostream>
 #include <thread>
@@ -54,10 +53,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     ThreadingTest();
+    ~ThreadingTest();
     ThreadingTest(const ThreadingTest&);
     ThreadingTest& operator=(const ThreadingTest&);
 };
-
-#endif /* ThreadingTest_h */

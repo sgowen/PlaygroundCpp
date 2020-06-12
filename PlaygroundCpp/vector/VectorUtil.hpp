@@ -1,16 +1,15 @@
 //
-//  VectorUtil.h
+//  VectorUtil.hpp
 //  Vector
 //
 //  Created by Stephen Gowen on 11/2/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_VectorUtil_h
-#define sgowen_VectorUtil_h
+#pragma once
 
-#include <vector/Extension.h>
-#include <vector/Vector.h>
+#include <vector/Extension.hpp>
+#include <vector/Vector.hpp>
 
 class VectorUtil
 {
@@ -28,10 +27,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     VectorUtil();
+    ~VectorUtil();
     VectorUtil(const VectorUtil&);
     VectorUtil& operator=(const VectorUtil&);
 };
-
-#endif /* sgowen_VectorUtil_h */

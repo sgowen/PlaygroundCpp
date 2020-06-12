@@ -1,15 +1,14 @@
 //
-//  Vector.h
+//  Vector.hpp
 //  Vector
 //
 //  Created by Stephen Gowen on 11/2/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_Vector_h
-#define sgowen_Vector_h
+#pragma once
 
-#include <vector/Extension.h>
+#include <vector/Extension.hpp>
 
 #include <stdlib.h>
 #include <memory>
@@ -235,5 +234,3 @@ private:
         buffer->~T();
     }
 };
-
-#endif /* sgowen_Vector_h */

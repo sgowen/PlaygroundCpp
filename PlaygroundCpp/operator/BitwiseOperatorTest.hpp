@@ -1,13 +1,12 @@
 //
-//  BitwiseOperatorTest.h
+//  BitwiseOperatorTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/3/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef BitwiseOperatorTest_h
-#define BitwiseOperatorTest_h
+#pragma once
 
 class BitwiseOperatorTest
 {
@@ -145,10 +144,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     BitwiseOperatorTest();
+    ~BitwiseOperatorTest();
     BitwiseOperatorTest(const BitwiseOperatorTest&);
     BitwiseOperatorTest& operator=(const BitwiseOperatorTest&);
 };
-
-#endif /* BitwiseOperatorTest_h */

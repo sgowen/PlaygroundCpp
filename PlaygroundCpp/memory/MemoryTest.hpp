@@ -1,18 +1,17 @@
 //
-//  MemoryTest.h
+//  MemoryTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/9/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef MemoryTest_h
-#define MemoryTest_h
+#pragma once
 
 #include <vector>
 #include <string>
 
-#include <vector/Extension.h>
+#include <vector/Extension.hpp>
 
 class MemoryTest
 {
@@ -214,10 +213,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     MemoryTest();
+    ~MemoryTest();
     MemoryTest(const MemoryTest&);
     MemoryTest& operator=(const MemoryTest&);
 };
-
-#endif /* MemoryTest_h */

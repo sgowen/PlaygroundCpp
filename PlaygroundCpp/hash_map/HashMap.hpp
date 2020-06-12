@@ -1,16 +1,15 @@
 //
-//  HashMap.h
+//  HashMap.hpp
 //  HashMap
 //
 //  Created by Stephen Gowen on 11/2/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_HashMap_h
-#define sgowen_HashMap_h
+#pragma once
 
-#include <vector/Extension.h>
-#include <vector/Vector.h>
+#include <vector/Extension.hpp>
+#include <vector/Vector.hpp>
 
 template <typename K, typename V, typename H>
 class HashMap
@@ -318,5 +317,3 @@ private:
         return _hashFunction(key) % _capacity;
     }
 };
-
-#endif /* sgowen_HashMap_h */

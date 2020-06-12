@@ -1,17 +1,16 @@
 //
-//  HashMapUtil.h
+//  HashMapUtil.hpp
 //  HashMap
 //
 //  Created by Stephen Gowen on 11/2/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_HashMapUtil_h
-#define sgowen_HashMapUtil_h
+#pragma once
 
-#include <hash_map/HashMap.h>
+#include <hash_map/HashMap.hpp>
 
-#include <vector/Extension.h>
+#include <vector/Extension.hpp>
 
 #include <string>
 #include <assert.h>
@@ -31,10 +30,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     HashMapUtil();
+    ~HashMapUtil();
     HashMapUtil(const HashMapUtil&);
     HashMapUtil& operator=(const HashMapUtil&);
 };
-
-#endif /* sgowen_HashMapUtil_h */

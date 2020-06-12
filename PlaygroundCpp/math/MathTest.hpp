@@ -1,13 +1,12 @@
 //
-//  MathTest.h
+//  MathTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 9/7/18.
 //  Copyright © 2018 Stephen Gowen. All rights reserved.
 //
 
-#ifndef MathTest_h
-#define MathTest_h
+#pragma once
 
 #include <vector>
 #include <string>
@@ -215,10 +214,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     MathTest();
+    ~MathTest();
     MathTest(const MathTest&);
     MathTest& operator=(const MathTest&);
 };
-
-#endif /* MathTest_h */

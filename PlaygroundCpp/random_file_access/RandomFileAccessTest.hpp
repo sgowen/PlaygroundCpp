@@ -1,13 +1,12 @@
 //
-//  RandomFileAccessTest.h
+//  RandomFileAccessTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/14/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef RandomFileAccessTest_h
-#define RandomFileAccessTest_h
+#pragma once
 
 #include <fstream>
 
@@ -114,10 +113,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     RandomFileAccessTest();
+    ~RandomFileAccessTest();
     RandomFileAccessTest(const RandomFileAccessTest&);
     RandomFileAccessTest& operator=(const RandomFileAccessTest&);
 };
-
-#endif /* RandomFileAccessTest_h */

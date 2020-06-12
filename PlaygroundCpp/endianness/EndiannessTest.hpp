@@ -1,13 +1,12 @@
 //
-//  EndiannessTest.h
+//  EndiannessTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/14/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef EndiannessTest_h
-#define EndiannessTest_h
+#pragma once
 
 #include <inttypes.h>
 #include <iostream>
@@ -52,10 +51,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     EndiannessTest();
+    ~EndiannessTest();
     EndiannessTest(const EndiannessTest&);
     EndiannessTest& operator=(const EndiannessTest&);
 };
-
-#endif /* EndiannessTest_h */

@@ -1,17 +1,16 @@
 //
-//  Pool.h
+//  Pool.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/12/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_Pool_h
-#define sgowen_Pool_h
+#pragma once
 
-#include <vector/Vector.h>
-#include <vector/VectorUtil.h>
-#include <vector/Extension.h>
+#include <vector/Vector.hpp>
+#include <vector/VectorUtil.hpp>
+#include <vector/Extension.hpp>
 
 template <typename T>
 class Pool
@@ -56,5 +55,3 @@ public:
 private:
     Vector<T*> _objects;
 };
-
-#endif /* sgowen_Pool_h */

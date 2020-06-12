@@ -1,13 +1,12 @@
 //
-//  StringSplitTest.h
+//  StringSplitTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/14/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef StringSplitTest_h
-#define StringSplitTest_h
+#pragma once
 
 #include <inttypes.h>
 #include <iostream>
@@ -49,15 +48,13 @@ public:
         std::set<char> delims;
         delims.insert('/');
         
-        std::vector<std::string> path = splitpath("/Users/sgowen/Dropbox/Documents/gamedev/github/PlaygroundCpp/PlaygroundCpp/random_file_access/RandomFileAccessTest.h", delims);
+        std::vector<std::string> path = splitpath("/Users/sgowen/Dropbox/Documents/gamedev/github/PlaygroundCpp/PlaygroundCpp/random_file_access/RandomFileAccessTest.hpp", delims);
         std::cout << path.back() << std::endl;
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     StringSplitTest();
+    ~StringSplitTest();
     StringSplitTest(const StringSplitTest&);
     StringSplitTest& operator=(const StringSplitTest&);
 };
-
-#endif /* StringSplitTest_h */

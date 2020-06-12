@@ -1,16 +1,15 @@
 //
-//  PoolTest.h
+//  PoolTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/12/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_PoolTest_h
-#define sgowen_PoolTest_h
+#pragma once
 
-#include <pool/Pool.h>
-#include <vector/Vector.h>
+#include <pool/Pool.hpp>
+#include <vector/Vector.hpp>
 
 #include <iostream>
 
@@ -109,10 +108,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     PoolTest();
+    ~PoolTest();
     PoolTest(const PoolTest&);
     PoolTest& operator=(const PoolTest&);
 };
-
-#endif /* sgowen_PoolTest_h */

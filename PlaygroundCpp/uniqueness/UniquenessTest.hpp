@@ -1,13 +1,12 @@
 //
-//  UniquenessTest.h
+//  UniquenessTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/6/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef UniquenessTest_h
-#define UniquenessTest_h
+#pragma once
 
 int getNextID()
 {
@@ -29,10 +28,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     UniquenessTest();
+    ~UniquenessTest();
     UniquenessTest(const UniquenessTest&);
     UniquenessTest& operator=(const UniquenessTest&);
 };
-
-#endif /* UniquenessTest_h */

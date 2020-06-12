@@ -1,17 +1,16 @@
 //
-//  VectorTest.h
+//  VectorTest.hpp
 //  Vector
 //
 //  Created by Stephen Gowen on 11/6/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_VectorTest_h
-#define sgowen_VectorTest_h
+#pragma once
 
-#include <vector/Extension.h>
-#include <vector/Vector.h>
-#include <vector/VectorUtil.h>
+#include <vector/Extension.hpp>
+#include <vector/Vector.hpp>
+#include <vector/VectorUtil.hpp>
 
 #include <iostream>
 #include <time.h>
@@ -304,10 +303,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     VectorTest();
+    ~VectorTest();
     VectorTest(const VectorTest&);
     VectorTest& operator=(const VectorTest&);
 };
-
-#endif /* sgowen_VectorTest_h */

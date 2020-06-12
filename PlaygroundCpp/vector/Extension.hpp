@@ -1,13 +1,12 @@
 //
-//  Extension.h
+//  Extension.hpp
 //  Vector
 //
 //  Created by Stephen Gowen on 11/2/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef sgowen_Extension_h
-#define sgowen_Extension_h
+#pragma once
 
 #include <stdlib.h>
 
@@ -67,5 +66,3 @@ public:
     
     virtual void ngFree(void* mem);
 };
-
-#endif /* sgowen_Extension_h */

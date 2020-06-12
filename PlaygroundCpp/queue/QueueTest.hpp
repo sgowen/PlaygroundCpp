@@ -1,13 +1,12 @@
 //
-//  QueueTest.h
+//  QueueTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 12/11/19.
 //  Copyright © 2019 Stephen Gowen. All rights reserved.
 //
 
-#ifndef QueueTest_h
-#define QueueTest_h
+#pragma once
 
 #include <inttypes.h>
 #include <iostream>
@@ -37,10 +36,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     QueueTest();
+    ~QueueTest();
     QueueTest(const QueueTest&);
     QueueTest& operator=(const QueueTest&);
 };
-
-#endif /* QueueTest_h */

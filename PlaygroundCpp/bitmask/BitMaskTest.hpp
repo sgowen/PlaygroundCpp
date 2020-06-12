@@ -1,13 +1,12 @@
 //
-//  BitMaskTest.h
+//  BitMaskTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 10/29/19.
 //  Copyright © 2019 Stephen Gowen. All rights reserved.
 //
 
-#ifndef BitMaskTest_h
-#define BitMaskTest_h
+#pragma once
 
 #include <inttypes.h>
 #include <iostream>
@@ -28,10 +27,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     BitMaskTest();
+    ~BitMaskTest();
     BitMaskTest(const BitMaskTest&);
     BitMaskTest& operator=(const BitMaskTest&);
 };
-
-#endif /* BitMaskTest_h */

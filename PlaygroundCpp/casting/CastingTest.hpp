@@ -1,13 +1,12 @@
 //
-//  CastingTest.h
+//  CastingTest.hpp
 //  PlaygroundCpp
 //
 //  Created by Stephen Gowen on 11/14/17.
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#ifndef CastingTest_h
-#define CastingTest_h
+#pragma once
 
 #include <inttypes.h>
 #include <iostream>
@@ -34,10 +33,8 @@ public:
     }
     
 private:
-    // ctor, copy ctor, and assignment should be private in a Singleton
     CastingTest();
+    ~CastingTest();
     CastingTest(const CastingTest&);
     CastingTest& operator=(const CastingTest&);
 };
-
-#endif /* CastingTest_h */
