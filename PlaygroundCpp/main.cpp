@@ -18,6 +18,7 @@
 #include <queue/QueueTest.hpp>
 #include <random_file_access/RandomFileAccessTest.hpp>
 #include <sin_table/SinTableTest.hpp>
+#include <string/StringTest.hpp>
 #include <string_split/StringSplitTest.hpp>
 #include <threading/ThreadingTest.hpp>
 #include <uniqueness/UniquenessTest.hpp>
@@ -33,13 +34,14 @@ int main(int argc, const char* argv[])
     EndiannessTest::test();
     HashMapTest::test();
     MathTest::test();
-//    MemoryTest::test(); // TODO, this is currently crashing
+    MemoryTest::test(); // TODO, this is currently crashing
     MiscTest::test();
     BitwiseOperatorTest::test();
     PoolTest::test();
     QueueTest::test();
-//    RandomFileAccessTest::test(); // TODO, Uh oh, Sample.dat could not be opened for reading!
+    RandomFileAccessTest::test(); // TODO, Uh oh, Sample.dat could not be opened for reading!
     SinTableTest::test();
+    StringTest::test();
     StringSplitTest::test();
     ThreadingTest::test();
     UniquenessTest::test();

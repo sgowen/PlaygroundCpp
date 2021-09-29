@@ -46,7 +46,8 @@ public:
         std::cout << "&stringDeref " << &stringDeref << std::endl;
         std::cout << "&stringDerefRef " << &stringDerefRef << std::endl;
         
-        testStringConstructor();
+        // FIXME
+//        testStringConstructor();
         
         std::string OptionString = std::string("imagertemp=-10.0");
         testStringCopyToken(OptionString);
@@ -142,10 +143,12 @@ public:
         return hash;
     }
     
+#define TEST_FILE "/Users/sgowen/Dropbox/Documents/gamedev/github/PlaygroundCpp/PlaygroundCpp/random_file_access/Sample.dat"
+    
     static void testStringConstructor()
     {
         int length;
-        const unsigned char* binary = readFile("test.txt", &length);
+        const unsigned char* binary = readFile(TEST_FILE, &length);
         
         std::string stringThatWeRead = readStuff(binary, length);
         
