@@ -58,5 +58,6 @@ int main(int argc, const char* argv[])
      21. Implement Trie
      22. Implement Graph
      23. Implement Dijkstra's algorithm
+     24. List examples of when to use Trie, Graph, Linked List, etc.
      */
 }
