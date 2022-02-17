@@ -13,6 +13,16 @@ class BitwiseOperatorTest
 public:
     static void test()
     {
+        test1();
+        testBools();
+        testBitwiseAnd();
+        testBitwiseAnd2();
+        testShifts();
+    }
+    
+private:
+    static void test1()
+    {
         int atomicNumMask = 0x7F;
         int typeMask = 0x1FF;
         
@@ -39,12 +49,6 @@ public:
             
             printf("mask1: %d, mask2: %d, result: %d \n", mask1, mask2, result);
         }
-        
-        testBools();
-        
-        testBitwiseAnd();
-        
-        testShifts();
     }
     
     static void testBools()
@@ -85,10 +89,25 @@ public:
                     b = '4';
                     value |= (b & 0x7F) << 21;
                     unsigned char b2 = '7';
-                    if (b & 0x80) value |= (b2 & 0x7F) << 28;
+                    if (b & 0x80)
+                    {
+                        value |= (b2 & 0x7F) << 28;
+                    }
                 }
             }
         }
+    }
+    
+    static void testBitwiseAnd2()
+    {
+        uint16_t rawRecipeCode = 0x1001;
+        printf("rawRecipeCode %d \n", rawRecipeCode);
+        
+        uint16_t recipeCode = rawRecipeCode & 0xF000;
+        printf("recipeCode %d \n", recipeCode);
+        
+        uint16_t modifiers = rawRecipeCode & 0x0FFF;
+        printf("modifiers %d \n", modifiers);
     }
     
     static void testShifts()
@@ -143,7 +162,6 @@ public:
         printf("2 Bytes[1] %d \n", Bytes[1]);
     }
     
-private:
     BitwiseOperatorTest();
     ~BitwiseOperatorTest();
     BitwiseOperatorTest(const BitwiseOperatorTest&);

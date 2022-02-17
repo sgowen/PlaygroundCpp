@@ -8,9 +8,8 @@
 
 #pragma once
 
-#include <hash_map/HashMap.hpp>
-
-#include <vector/Extension.hpp>
+#include "HashMap.hpp"
+#include "Extension.hpp"
 
 #include <string>
 #include <assert.h>

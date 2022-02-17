@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include <hash_map/HashMap.hpp>
-#include <hash_map/HashMapUtil.hpp>
+#include "HashMap.hpp"
+#include "HashMapUtil.hpp"
 
 #include <iostream>
 #include <string>
@@ -182,21 +182,23 @@ class HashMapTest
 public:
     static void test()
     {
+        test1();
+        test2();
+    }
+    
+private:
+    static void test1()
+    {
         EntityManager entityManager;
         
         initEntityManager(entityManager);
-        
         printEntityManager(entityManager);
-        
         testEntityManager(entityManager);
-        
         printEntityManager(entityManager);
         
         HashMapUtil::cleanUpHashMapOfPointers<Key, Entity, HashKey>(entityManager._entityMap);
         
         printEntityManager(entityManager);
-        
-        test2();
     }
     
     static void test2()
@@ -239,7 +241,6 @@ public:
         std::cout << "Hash Map Size after erase: " << hmap.size() << std::endl;
     }
     
-private:
     HashMapTest();
     ~HashMapTest();
     HashMapTest(const HashMapTest&);

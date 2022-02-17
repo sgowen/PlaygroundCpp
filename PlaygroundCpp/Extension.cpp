@@ -6,7 +6,7 @@
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#include <vector/Extension.hpp>
+#include "Extension.hpp"
 
 #include <iostream>
 #include <assert.h>

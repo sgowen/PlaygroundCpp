@@ -8,9 +8,10 @@
 
 #pragma once
 
-#include <vector/Extension.hpp>
-#include <vector/Vector.hpp>
-#include <vector/VectorUtil.hpp>
+#include "Extension.hpp"
+
+#include "Vector.hpp"
+#include "VectorUtil.hpp"
 
 #include <iostream>
 #include <time.h>
@@ -219,25 +220,24 @@ void clear(Vector<T>& array)
     print(array, __FUNCTION__);
 }
 
-static unsigned long _gVectorTestStartTime;
-
 class VectorTest
 {
 public:
-    static void onBegin()
+    static void test()
     {
         srand(static_cast<unsigned int>(time(NULL)));
+        unsigned long vectorTestStartTime = clock();
         
-        _gVectorTestStartTime = clock();
-    }
-    
-    static void onEnd()
-    {
+        testVectorInt();
+        testVectorString();
+        testVectorCustom();
+        testOtherStuff();
+        
         unsigned long end = clock();
-        
-        std::cout << "it took " << end - _gVectorTestStartTime << " ticks, or " << ((float)end - _gVectorTestStartTime)/CLOCKS_PER_SEC << " seconds." << std::endl;
+        std::cout << "it took " << end - vectorTestStartTime << " ticks, or " << ((float)end - vectorTestStartTime)/CLOCKS_PER_SEC << " seconds." << std::endl;
     }
     
+private:
     static void testVectorInt()
     {
         Vector<int> arr;
@@ -292,17 +292,6 @@ public:
         assert(arr3 != arr4);
     }
     
-    static void test()
-    {
-        onBegin();
-        testVectorInt();
-        testVectorString();
-        testVectorCustom();
-        testOtherStuff();
-        onEnd();
-    }
-    
-private:
     VectorTest();
     ~VectorTest();
     VectorTest(const VectorTest&);

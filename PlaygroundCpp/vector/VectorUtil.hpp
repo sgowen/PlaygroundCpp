@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include <vector/Extension.hpp>
-#include <vector/Vector.hpp>
+#include "Extension.hpp"
+#include "Vector.hpp"
 
 class VectorUtil
 {

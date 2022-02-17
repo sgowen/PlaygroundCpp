@@ -44,6 +44,7 @@ public:
         /// Thread 1 doesn't necessarily increment i from 1 to 2, it could be Thread 78
     }
     
+private:
     static void doStuff()
     {
         _m.lock();
@@ -52,7 +53,6 @@ public:
         _m.unlock();
     }
     
-private:
     ThreadingTest();
     ~ThreadingTest();
     ThreadingTest(const ThreadingTest&);

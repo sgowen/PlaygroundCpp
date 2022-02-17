@@ -8,9 +8,10 @@
 
 #pragma once
 
+#include "Extension.hpp"
+
 #include <vector/Vector.hpp>
 #include <vector/VectorUtil.hpp>
-#include <vector/Extension.hpp>
 
 template <typename T>
 class Pool

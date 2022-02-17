@@ -25,6 +25,7 @@ public:
         printInts();
     }
     
+private:
     static bool isLittleEndian()
     {
         volatile uint32_t i = 0x01234567;
@@ -50,7 +51,6 @@ public:
         printf ("\n");
     }
     
-private:
     EndiannessTest();
     ~EndiannessTest();
     EndiannessTest(const EndiannessTest&);
