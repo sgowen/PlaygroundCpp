@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB190D121FAB80E800BDC6D0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB190D111FAB80E800BDC6D0 /* main.cpp */; };
-		BB9ED9A427BF097000E53E3C /* Extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9ED9A227BF097000E53E3C /* Extension.cpp */; };
+		BB9ED9A427BF097000E53E3C /* GowMemoryAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9ED9A227BF097000E53E3C /* GowMemoryAllocator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,19 +24,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BB10DF281FB10C3B00BCCEDF /* HashMapUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HashMapUtil.hpp; sourceTree = "<group>"; };
 		BB10DF291FB10C3B00BCCEDF /* HashMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HashMap.hpp; sourceTree = "<group>"; };
 		BB10DF2A1FB10C3B00BCCEDF /* HashMapTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HashMapTest.hpp; sourceTree = "<group>"; };
-		BB10DF2C1FB10C3B00BCCEDF /* VectorUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VectorUtil.hpp; sourceTree = "<group>"; };
-		BB10DF2D1FB10C3B00BCCEDF /* Vector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
-		BB10DF2E1FB10C3B00BCCEDF /* VectorTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VectorTest.hpp; sourceTree = "<group>"; };
 		BB190D0E1FAB80E800BDC6D0 /* PlaygroundCpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlaygroundCpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BB30F87727C42BFD00D3D4E3 /* GowArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GowArray.hpp; sourceTree = "<group>"; };
+		BB30F87927C430DE00D3D4E3 /* GowArrayTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GowArrayTest.hpp; sourceTree = "<group>"; };
 		BB3619B61FBB5CBC00518C36 /* EndiannessTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EndiannessTest.hpp; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BitwiseOperatorTest.hpp; sourceTree = "<group>"; };
 		BB5D5A42206EC2BE00FB53FD /* ThreadingTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ThreadingTest.hpp; sourceTree = "<group>"; };
-		BB9ED9A227BF097000E53E3C /* Extension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Extension.cpp; sourceTree = "<group>"; };
-		BB9ED9A327BF097000E53E3C /* Extension.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Extension.hpp; sourceTree = "<group>"; };
+		BB9ED9A227BF097000E53E3C /* GowMemoryAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GowMemoryAllocator.cpp; sourceTree = "<group>"; };
+		BB9ED9A327BF097000E53E3C /* GowMemoryAllocator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GowMemoryAllocator.hpp; sourceTree = "<group>"; };
 		BBA47DFD1FB0CBF200D94351 /* SinTableTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SinTableTest.hpp; sourceTree = "<group>"; };
 		BBAA11371FB90CC800936553 /* Pool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pool.hpp; sourceTree = "<group>"; };
 		BBAA11381FB90D3200936553 /* PoolTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PoolTest.hpp; sourceTree = "<group>"; };
@@ -61,19 +59,8 @@
 			children = (
 				BB10DF291FB10C3B00BCCEDF /* HashMap.hpp */,
 				BB10DF2A1FB10C3B00BCCEDF /* HashMapTest.hpp */,
-				BB10DF281FB10C3B00BCCEDF /* HashMapUtil.hpp */,
 			);
 			path = hash_map;
-			sourceTree = "<group>";
-		};
-		BB10DF2B1FB10C3B00BCCEDF /* vector */ = {
-			isa = PBXGroup;
-			children = (
-				BB10DF2D1FB10C3B00BCCEDF /* Vector.hpp */,
-				BB10DF2E1FB10C3B00BCCEDF /* VectorTest.hpp */,
-				BB10DF2C1FB10C3B00BCCEDF /* VectorUtil.hpp */,
-			);
-			path = vector;
 			sourceTree = "<group>";
 		};
 		BB190D051FAB80E800BDC6D0 = {
@@ -96,9 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				BBEF702820008AFE0030076A /* casting */,
+				BB30F87527C42BFD00D3D4E3 /* data_structures */,
 				BB3619B51FBB5CA800518C36 /* endianness */,
-				BB9ED9A227BF097000E53E3C /* Extension.cpp */,
-				BB9ED9A327BF097000E53E3C /* Extension.hpp */,
+				BB9ED9A227BF097000E53E3C /* GowMemoryAllocator.cpp */,
+				BB9ED9A327BF097000E53E3C /* GowMemoryAllocator.hpp */,
 				BB10DF271FB10C3B00BCCEDF /* hash_map */,
 				BB190D111FAB80E800BDC6D0 /* main.cpp */,
 				BB5C16931FACBF6C00025D18 /* operator */,
@@ -107,9 +95,17 @@
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
 				BBBB0F092705299000D7D319 /* string */,
 				BB5D5A41206EC29B00FB53FD /* threading */,
-				BB10DF2B1FB10C3B00BCCEDF /* vector */,
 			);
 			path = PlaygroundCpp;
+			sourceTree = "<group>";
+		};
+		BB30F87527C42BFD00D3D4E3 /* data_structures */ = {
+			isa = PBXGroup;
+			children = (
+				BB30F87927C430DE00D3D4E3 /* GowArrayTest.hpp */,
+				BB30F87727C42BFD00D3D4E3 /* GowArray.hpp */,
+			);
+			path = data_structures;
 			sourceTree = "<group>";
 		};
 		BB3619B51FBB5CA800518C36 /* endianness */ = {
@@ -236,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB190D121FAB80E800BDC6D0 /* main.cpp in Sources */,
-				BB9ED9A427BF097000E53E3C /* Extension.cpp in Sources */,
+				BB9ED9A427BF097000E53E3C /* GowMemoryAllocator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

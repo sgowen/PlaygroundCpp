@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "Extension.hpp"
-#include <vector/Vector.hpp>
+#include "GowMemoryAllocator.hpp"
+#include <data_structures/GowArray.hpp>
 
 template <typename K, typename V, typename H>
 class HashMap
@@ -23,7 +23,7 @@ public:
         friend class HashMap;
         
     public:
-        Iterator(Entry* entry = NULL) : _entry(entry)
+        Iterator(Entry* entry = nullptr) : _entry(entry)
         {
             // Empty
         }
@@ -124,12 +124,10 @@ public:
         
         size_t index = hash(key);
         
-        Entry* entry = NEW(Entry);
-        new (entry) Entry();
-        entry->_key = key;
-        entry->_value = value;
+        Entry* entry = GOW_NEW(Entry);
+        new (entry) Entry(key, value);
         
-        _hashSize++;
+        ++_hashSize;
         
         if (_header.next == (&_trailer))
         {
@@ -143,7 +141,7 @@ public:
             return std::make_pair(Iterator(entry), true);
         }
         
-        if (_hashTable[index].next == NULL)
+        if (_hashTable[index].next == nullptr)
         {
             _hashTable[index].next = entry;
             _hashTable[index].prev = entry;
@@ -190,7 +188,7 @@ public:
         const size_t index = hash(key);
         Iterator iter(_hashTable[index].next);
         
-        if (iter._entry != NULL)
+        if (iter._entry != nullptr)
         {
             for ( ; hash(iter._entry->_key) == index ; ++iter)
             {
@@ -214,8 +212,8 @@ public:
             
             if (_hashTable[index].next == pos._entry && _hashTable[index].prev == pos._entry)
             {
-                _hashTable[index].next = NULL;
-                _hashTable[index].prev = NULL;
+                _hashTable[index].next = nullptr;
+                _hashTable[index].prev = nullptr;
                 
                 if (_header.next == pos._entry)
                 {
@@ -233,7 +231,7 @@ public:
                     pos._entry->next->prev = pos._entry->prev;
                 }
                 
-                DESTROY(Entry, pos._entry);
+                GOW_DESTROY(pos._entry, Entry);
             }
             else if (_hashTable[index].next == pos._entry)
             {
@@ -249,7 +247,7 @@ public:
                     pos._entry->next->prev = pos._entry->prev;
                 }
                 
-                DESTROY(Entry, pos._entry);
+                GOW_DESTROY(pos._entry, Entry);
             }
             else if (_hashTable[index].prev == pos._entry)
             {
@@ -265,14 +263,14 @@ public:
                     pos._entry->next->prev = pos._entry->prev;
                 }
                 
-                DESTROY(Entry, pos._entry);
+                GOW_DESTROY(pos._entry, Entry);
             }
             else
             {
                 pos._entry->prev->next = pos._entry->next;
                 pos._entry->next->prev = pos._entry->prev;
                 
-                DESTROY(Entry, pos._entry);
+                GOW_DESTROY(pos._entry, Entry);
             }
             
             _hashSize--;
@@ -303,11 +301,28 @@ private:
         V _value;
         Entry* next;
         Entry* prev;
+        
+        Entry(K key, V value) :
+        _key(key),
+        _value(value),
+        next(nullptr),
+        prev(nullptr)
+        {
+            // Empty
+            printf("Entry ctor");
+        }
+        
+        Entry() :
+        next(nullptr),
+        prev(nullptr)
+        {
+            // Empty
+        }
     };
     
     const H _hashFunction;
     const size_t _capacity;
-    Vector<Entry> _hashTable;
+    GowArray<Entry> _hashTable;
     Entry _header;
     Entry _trailer;
     size_t _hashSize;

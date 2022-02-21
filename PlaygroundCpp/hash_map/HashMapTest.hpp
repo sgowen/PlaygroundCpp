@@ -9,7 +9,6 @@
 #pragma once
 
 #include "HashMap.hpp"
-#include "HashMapUtil.hpp"
 
 #include <iostream>
 #include <string>
@@ -196,7 +195,7 @@ private:
         testEntityManager(entityManager);
         printEntityManager(entityManager);
         
-        HashMapUtil::cleanUpHashMapOfPointers<Key, Entity, HashKey>(entityManager._entityMap);
+        cleanUpHashMapOfPointers<Key, Entity, HashKey>(entityManager._entityMap);
         
         printEntityManager(entityManager);
     }
@@ -236,9 +235,20 @@ private:
         
         std::cout << "Hash Map Size after erase: " << hmap.size() << std::endl;
         
-        HashMapUtil::cleanUpHashMapOfPointers<std::string, MyCustomClass2, MyKeyHash>(hmap);
+        cleanUpHashMapOfPointers<std::string, MyCustomClass2, MyKeyHash>(hmap);
         
         std::cout << "Hash Map Size after erase: " << hmap.size() << std::endl;
+    }
+    
+    template<typename K, typename T, typename H>
+    static void cleanUpHashMapOfPointers(HashMap<K, T*, H>& hashMap)
+    {
+        for (typename HashMap<K, T*, H>::Iterator i = hashMap.begin(); i != hashMap.end(); )
+        {
+            GOW_DESTROY(i.second(), T);
+            
+            i = hashMap.erase(i);
+        }
     }
     
     HashMapTest();

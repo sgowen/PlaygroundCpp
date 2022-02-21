@@ -9,7 +9,7 @@
 #pragma once
 
 #include <pool/Pool.hpp>
-#include <vector/Vector.hpp>
+#include <data_structures/GowArray.hpp>
 
 #include <iostream>
 
@@ -22,7 +22,7 @@ public:
 class SomethingThatHasAPool
 {
 public:
-    Pool< Vector<std::string> > _poolOfVectorStrings;
+    Pool< GowArray<std::string> > _poolOfGowArrayStrings;
     Pool<MyClass> _poolOfClass;
 };
 
@@ -65,16 +65,16 @@ public:
         
         cout << "Okay, what about a pool of vectors?" << endl;
         
-        // I expect to allocate a new Vector here
-        Vector<string>* vec1P = obj._poolOfVectorStrings.obtain();
-        Vector<string>& vec1 = *vec1P;
+        // I expect to allocate a new GowArray here
+        GowArray<string>* vec1P = obj._poolOfGowArrayStrings.obtain();
+        GowArray<string>& vec1 = *vec1P;
         vec1.push_back("This is a test");
         vec1.push_back("This is a test as well");
         vec1.push_back("This is a test too");
         
-        // I expect to allocate a new Vector here as well
-        Vector<string>* vec2P = obj._poolOfVectorStrings.obtain();
-        Vector<string>& vec2 = *vec2P;
+        // I expect to allocate a new GowArray here as well
+        GowArray<string>* vec2P = obj._poolOfGowArrayStrings.obtain();
+        GowArray<string>& vec2 = *vec2P;
         vec2.push_back("This is a test2");
         vec2.push_back("This is a test2 as well");
         vec2.push_back("This is a test2 too");
@@ -82,14 +82,14 @@ public:
         cout << "Freeing vec1" << endl;
         
         // Okay, sure had a lot of fun using that vector, time to throw it away
-        obj._poolOfVectorStrings.free(&vec1);
+        obj._poolOfGowArrayStrings.free(&vec1);
         
         // I shouldn't be able to free it again
-        obj._poolOfVectorStrings.free(&vec1);
+        obj._poolOfGowArrayStrings.free(&vec1);
         
         // We should get back vec1 here, which already has 3 strings in it
-        Vector<string>* vec3P = obj._poolOfVectorStrings.obtain();
-        Vector<string>& vec3 = *vec3P;
+        GowArray<string>* vec3P = obj._poolOfGowArrayStrings.obtain();
+        GowArray<string>& vec3 = *vec3P;
         
         assert(vec3.size() == 3);
         
@@ -103,8 +103,8 @@ public:
         vec3.push_back("This is a test3 as well");
         vec3.push_back("This is a test3 too");
         
-        obj._poolOfVectorStrings.free(vec2P);
-        obj._poolOfVectorStrings.free(vec3P);
+        obj._poolOfGowArrayStrings.free(vec2P);
+        obj._poolOfGowArrayStrings.free(vec3P);
     }
     
 private:

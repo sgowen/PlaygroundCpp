@@ -8,10 +8,9 @@
 
 #pragma once
 
-#include "Extension.hpp"
+#include "GowMemoryAllocator.hpp"
 
-#include <vector/Vector.hpp>
-#include <vector/VectorUtil.hpp>
+#include <data_structures/GowArray.hpp>
 
 template <typename T>
 class Pool
@@ -24,7 +23,13 @@ public:
     
     ~Pool()
     {
-        VectorUtil::cleanUpVectorOfPointers(_objects);
+        for (size_t i = 0; i < _objects.size(); )
+        {
+            T* item = _objects[i];
+            GOW_DESTROY(item, T);
+            
+            _objects.erase(i);
+        }
     }
     
     T* obtain()
@@ -38,7 +43,7 @@ public:
         }
         else
         {
-            T* ret = NEW(T);
+            T* ret = GOW_NEW(T);
             new (ret) T();
             
             return ret;
@@ -54,5 +59,5 @@ public:
     }
     
 private:
-    Vector<T*> _objects;
+    GowArray<T*> _objects;
 };

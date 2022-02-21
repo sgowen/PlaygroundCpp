@@ -6,9 +6,8 @@
 //  Copyright © 2017 Stephen Gowen. All rights reserved.
 //
 
-#include "Extension.hpp"
-
 #include <casting/CastingTest.hpp>
+#include <data_structures/GowArrayTest.hpp>
 #include <endianness/EndiannessTest.hpp>
 #include <hash_map/HashMapTest.hpp>
 #include <operator/BitwiseOperatorTest.hpp>
@@ -17,13 +16,11 @@
 #include <sin_table/SinTableTest.hpp>
 #include <string/StringTest.hpp>
 #include <threading/ThreadingTest.hpp>
-#include <vector/VectorTest.hpp>
 
 int main(int argc, const char* argv[])
 {
-    NGExtension::setInstance(DefaultNGExtension::getInstance());
-    
     CastingTest::test();
+    GowArrayTest::test();
     EndiannessTest::test();
     HashMapTest::test();
     BitwiseOperatorTest::test();
@@ -32,10 +29,9 @@ int main(int argc, const char* argv[])
     SinTableTest::test();
     StringTest::test();
     ThreadingTest::test();
-    VectorTest::test();
     
     /* TODO
-      1. Implement Array
+      1. ~~~ DONE ~~~ Implement Array
       2. Implement Set
       3. Implement Ordered Array
       4. Implement Linear Search O(n)
