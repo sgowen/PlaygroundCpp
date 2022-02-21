@@ -90,11 +90,6 @@ private:
             _z = z;
         }
         
-//        Point3D(const Point3D& other)
-//        {
-//            printf("Point3D copy ctor \n");
-//        }
-        
         ~Point3D()
         {
             printf("Point3D dtor \n");
