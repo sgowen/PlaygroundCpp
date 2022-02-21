@@ -88,7 +88,7 @@ public:
         return false;
     }
     
-    int indexOf(const T& value)
+    size_t indexOf(const T& value)
     {
         assert(_buffer != nullptr);
         
@@ -96,7 +96,7 @@ public:
         {
             if (_buffer[i] == value)
             {
-                return static_cast<int>(i);
+                return i;
             }
         }
         
@@ -202,7 +202,7 @@ public:
             return false;
         }
         
-        for (int i = 0, n = static_cast<int>(lhs.size()); i < n; ++i)
+        for (size_t i = 0, n = lhs.size(); i < n; ++i)
         {
             if (lhs[i] != rhs[i])
             {
