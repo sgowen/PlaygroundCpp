@@ -36,33 +36,36 @@ public:
         using namespace std;
         
         cout << "Testing _poolOfClass" << endl;
-        
+
         MyClass* mc1 = obj._poolOfClass.obtain();
         mc1->_x = 5;
         mc1->_y = 6;
         mc1->_z = 7;
-        
+
         MyClass* mc2 = obj._poolOfClass.obtain();
         mc2->_x = 6;
         mc2->_y = 7;
         mc2->_z = 8;
-        
+
         cout << "Freeing mc1" << endl;
-        
+
         obj._poolOfClass.free(mc1);
-        
+
         // I shouldn't be able to free it again
         obj._poolOfClass.free(mc1);
-        
+
         MyClass* mc3 = obj._poolOfClass.obtain();
         mc3->_x += 10;
         mc3->_y += 10;
         mc3->_z += 10;
-        
+
         assert(mc3->_x == 15);
-        
+
         cout << "mc3->_x == 15, sweet, that means mc3 == mc1" << endl;
-        
+
+        obj._poolOfClass.free(mc2);
+        obj._poolOfClass.free(mc3);
+
         cout << "Okay, what about a pool of vectors?" << endl;
         
         // I expect to allocate a new GowArray here
@@ -105,6 +108,8 @@ public:
         
         obj._poolOfGowArrayStrings.free(vec2P);
         obj._poolOfGowArrayStrings.free(vec3P);
+        
+        cout << "Okay, allocations table should be empty via desctructors after this message" << endl;
     }
     
 private:

@@ -153,6 +153,13 @@ private:
         assert(begin2._x == 3);
         assert(begin2._y == 5);
         assert(begin2._z == 7);
+        
+        point3DArray.push_back(Point3D(2, 4, 6));
+        Point3D* endP = point3DArray.end();
+        Point3D end = *endP;
+        assert(end._x == 2);
+        assert(end._y == 4);
+        assert(end._z == 6);
     }
     
     static void testCustomPointerType()
