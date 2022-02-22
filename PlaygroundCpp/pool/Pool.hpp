@@ -52,10 +52,12 @@ public:
     
     void free(T* object)
     {
-        if (!_objects.contains(object))
+        if (_objects.contains(object))
         {
-            _objects.push_back(object);
+            return;
         }
+        
+        _objects.push_back(object);
     }
     
 private:

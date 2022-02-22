@@ -18,6 +18,7 @@ public:
         testInt();
         testCustomType();
         testCustomPointerType();
+        testCustomTypeCopying();
     }
     
 private:
@@ -82,12 +83,31 @@ private:
         int _y;
         int _z;
         
-        Point3D(int x, int y, int z)
+        Point3D(int x, int y, int z) :
+        _x(x),
+        _y(y),
+        _z(z)
         {
             printf("Point3D ctor \n");
-            _x = x;
-            _y = y;
-            _z = z;
+        }
+        
+        Point3D(const Point3D& other) :
+        _x(other._x),
+        _y(other._y),
+        _z(other._z)
+        {
+            printf("Point3D copy ctor \n");
+        }
+        
+        Point3D& operator=(const Point3D& other)
+        {
+            _x = other._x;
+            _y = other._y;
+            _z = other._z;
+            
+            printf("Point3D assignment ctor \n");
+            
+            return *this;
         }
         
         ~Point3D()
@@ -157,6 +177,22 @@ private:
         
         testPoint->_x = 9;
         assert(beginP->_x == 9);
+    }
+    
+    static void testCustomTypeCopying()
+    {
+        GowArray<Point3D> point3DArray;
+        
+        point3DArray.push_back(Point3D(3, 5, 7));
+        point3DArray.push_back(Point3D(2, 4, 6));
+        point3DArray.push_back(Point3D(1, 11, 111));
+        
+        GowArray<Point3D> point3DArray2(point3DArray);
+        
+        GowArray<Point3D> point3DArray3 = point3DArray2;
+        GowArray<Point3D> point3DArray4;
+        point3DArray4 = point3DArray3;
+        point3DArray4 = point3DArray4;
     }
     
     GowArrayTest();

@@ -24,41 +24,28 @@ public:
     _buffer(nullptr)
     {
         // Empty
+        printf("GowArray ctor \n");
     }
     
     GowArray(const GowArray& other) :
-    _size(other._size),
-    _capacity(other._capacity),
+    _size(0),
+    _capacity(0),
     _buffer(nullptr)
     {
-        if (_capacity > 0)
-        {
-            _buffer = allocate(_capacity);
-            for (size_t i = 0; i < _size; ++i)
-            {
-                construct(_buffer + i, other._buffer[i]);
-            }
-        }
+        printf("GowArray copy ctor \n");
+        copy(other);
     }
     
-    GowArray& operator=(GowArray& other)
+    GowArray& operator=(const GowArray& other)
     {
+        printf("GowArray assignment ctor \n");
+        
         if (this != &other)
         {
             clear();
             deallocate();
             
-            _size = other._size;
-            _capacity = other._capacity;
-            
-            if (_capacity > 0)
-            {
-                _buffer = allocate(_capacity);
-                for (size_t i = 0; i < _size; ++i)
-                {
-                    construct(_buffer + i, other._buffer[i]);
-                }
-            }
+            copy(other);
         }
         
         return *this;
@@ -111,6 +98,7 @@ public:
         }
         
         construct(_buffer + _size++, value);
+//        _buffer[_size++] = value;
     }
     
     void insert(size_t index, const T& value)
@@ -125,10 +113,12 @@ public:
         for (size_t i = ++_size - 1; i > index; --i)
         {
             construct(_buffer + i, _buffer[i - 1]);
+//            _buffer[i] = _buffer[i - 1];
             destruct(_buffer + (i - 1));
         }
         
         construct(_buffer + index, value);
+//        _buffer[index] = value;
     }
     
     void erase(size_t index)
@@ -222,6 +212,21 @@ private:
     size_t _size;
     size_t _capacity;
     T* _buffer;
+    
+    void copy(const GowArray& other)
+    {
+        _size = other._size;
+        _capacity = other._capacity;
+        
+        if (_capacity > 0)
+        {
+            _buffer = allocate(_capacity);
+            for (size_t i = 0; i < _size; ++i)
+            {
+                _buffer[i] = other._buffer[i];
+            }
+        }
+    }
     
     void expand()
     {
