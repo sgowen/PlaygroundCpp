@@ -20,17 +20,17 @@
 
 int main(int argc, const char* argv[])
 {
-//    CastingTest::test();
-//    GowArrayTest::test();
-//    EndiannessTest::test();
-//    HashMapTest::test();
-//    BitwiseOperatorTest::test();
-//    PoolTest::test();
-//    QueueTest::test();
+    CastingTest::test();
+    GowArrayTest::test();
+    EndiannessTest::test();
+    HashMapTest::test();
+    BitwiseOperatorTest::test();
+    PoolTest::test();
+    QueueTest::test();
     RecursionTest::test();
-//    SinTableTest::test();
-//    StringTest::test();
-//    ThreadingTest::test();
+    SinTableTest::test();
+    StringTest::test();
+    ThreadingTest::test();
     
     /* TODO
       1. ~~~ DONE ~~~ Implement Array
@@ -44,7 +44,7 @@ int main(int argc, const char* argv[])
       9. Implement Hash Table
      10. Implement Stack (abstract data type)
      11. Implement Queue (abstract data type)
-     12. Implement some Recursive Algorithms
+     12. ~~~ DONE ~~~ Implement some Recursive Algorithms
      13. Implement SortableArray
      14. Implement Quicksort O(n log n) to O(n^2)
      15. Implement Quickselect O(2n)
