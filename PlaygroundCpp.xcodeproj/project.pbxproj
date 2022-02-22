@@ -30,6 +30,7 @@
 		BB190D111FAB80E800BDC6D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BB30F87727C42BFD00D3D4E3 /* GowArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GowArray.hpp; sourceTree = "<group>"; };
 		BB30F87927C430DE00D3D4E3 /* GowArrayTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GowArrayTest.hpp; sourceTree = "<group>"; };
+		BB30F87E27C58B4900D3D4E3 /* RecursionTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RecursionTest.hpp; sourceTree = "<group>"; };
 		BB3619B61FBB5CBC00518C36 /* EndiannessTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EndiannessTest.hpp; sourceTree = "<group>"; };
 		BB5C16941FACBF8500025D18 /* BitwiseOperatorTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BitwiseOperatorTest.hpp; sourceTree = "<group>"; };
 		BB5D5A42206EC2BE00FB53FD /* ThreadingTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ThreadingTest.hpp; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 				BB5C16931FACBF6C00025D18 /* operator */,
 				BBAA11361FB90CB500936553 /* pool */,
 				BBE17CB823A1CD6600695E31 /* queue */,
+				BB30F87D27C58B4900D3D4E3 /* recursion */,
 				BBA47DFC1FB0CBE600D94351 /* sin_table */,
 				BBBB0F092705299000D7D319 /* string */,
 				BB5D5A41206EC29B00FB53FD /* threading */,
@@ -106,6 +108,14 @@
 				BB30F87727C42BFD00D3D4E3 /* GowArray.hpp */,
 			);
 			path = data_structures;
+			sourceTree = "<group>";
+		};
+		BB30F87D27C58B4900D3D4E3 /* recursion */ = {
+			isa = PBXGroup;
+			children = (
+				BB30F87E27C58B4900D3D4E3 /* RecursionTest.hpp */,
+			);
+			path = recursion;
 			sourceTree = "<group>";
 		};
 		BB3619B51FBB5CA800518C36 /* endianness */ = {

@@ -13,22 +13,24 @@
 #include <operator/BitwiseOperatorTest.hpp>
 #include <pool/PoolTest.hpp>
 #include <queue/QueueTest.hpp>
+#include <recursion/RecursionTest.hpp>
 #include <sin_table/SinTableTest.hpp>
 #include <string/StringTest.hpp>
 #include <threading/ThreadingTest.hpp>
 
 int main(int argc, const char* argv[])
 {
-    CastingTest::test();
-    GowArrayTest::test();
-    EndiannessTest::test();
-    HashMapTest::test();
-    BitwiseOperatorTest::test();
-    PoolTest::test();
-    QueueTest::test();
-    SinTableTest::test();
-    StringTest::test();
-    ThreadingTest::test();
+//    CastingTest::test();
+//    GowArrayTest::test();
+//    EndiannessTest::test();
+//    HashMapTest::test();
+//    BitwiseOperatorTest::test();
+//    PoolTest::test();
+//    QueueTest::test();
+    RecursionTest::test();
+//    SinTableTest::test();
+//    StringTest::test();
+//    ThreadingTest::test();
     
     /* TODO
       1. ~~~ DONE ~~~ Implement Array
